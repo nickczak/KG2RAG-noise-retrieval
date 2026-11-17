@@ -1,4 +1,4 @@
-# Knowledge Graph-Guided Retrieval Augmented Generation
+# Knowledge Graph-Guided Retrieval Augmented Generation - Reduced Noise Retrieval
 This is the official code release of the following paper:
 
 Xiangrong Zhu, Yuexiang Xie, Yi Liu, Yaliang Li, Wei Hu. Knowledge Graph-Guided Retrieval Augmented Generation, NAACL 2025.
