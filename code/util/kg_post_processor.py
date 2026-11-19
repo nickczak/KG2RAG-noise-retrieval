@@ -3,7 +3,7 @@ import re
 import time
 import networkx as nx
 
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 from numpy import argmax
 
 from typing import List,Dict,Optional,Set
@@ -454,13 +454,15 @@ class SemanticFilterPostProcessor(BaseNodePostprocessor):
             return []
 
         question = query_bundle.query_str
+        chunks = [node.node.text for node in nodes]
 
         # Create question and chunk (matrix) vectors
         question_vector = self.encoder.encode(
-            question, normalize_embeddings=True,
+            question,
+            normalize_embeddings=True,
         )
         chunk_vectors = self.encoder.encode(
-            [node.node.text for node in nodes],
+            chunks,
             normalize_embeddings=True,
         )
 
@@ -476,5 +478,36 @@ class SemanticFilterPostProcessor(BaseNodePostprocessor):
         # None pass threshold, keep the single sentence with the highest sematic similarity score
         if not kept_nodes:
             kept_nodes = [nodes[argmax(similarites)]]
+
+        return kept_nodes
+
+class CrossEncoderFilterPostProcessor(BaseNodePostprocessor):
+
+    "KnowledgeGraph-based Node Processor"
+    encoder: CrossEncoder
+    threshold: float
+
+    @classmethod
+    def class_name(cls):
+       return "CrossEncoderFilterPostProcessor"
+
+
+    def _postprocess_nodes(self, nodes, query_bundle=None):
+        if not nodes:
+            return []
+
+        question = query_bundle.query_str
+        pairs = [(question, node.node.text) for node in nodes]
+        scores = self.encoder.predict(pairs)
+
+        kept_nodes = [
+            node
+            for node, score in zip(nodes, scores)
+            if score >= self.threshold
+        ]
+
+        # None pass threshold, keep the single sentence with the highest sematic similarity score
+        if not kept_nodes:
+            kept_nodes = [nodes[argmax(scores)]]
 
         return kept_nodes

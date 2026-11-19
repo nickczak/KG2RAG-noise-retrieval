@@ -14,9 +14,9 @@ from llama_index.core.retrievers import VectorIndexRetriever
 from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.core.response_synthesizers import ResponseMode
-from util.kg_post_processor import NaivePostprocessor,KGRetrievePostProcessor,ngram_overlap, GraphFilterPostProcessor, SemanticFilterPostProcessor
+from util.kg_post_processor import NaivePostprocessor,KGRetrievePostProcessor,ngram_overlap, GraphFilterPostProcessor, SemanticFilterPostProcessor, CrossEncoderFilterPostProcessor
 from util.kg_response_synthesizer import get_response_synthesizer
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 
 import logging
 logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -180,7 +180,6 @@ def process_sample(args,sample,kg,bge_reranker,encoder=None):
 
     expansion_pp = KGRetrievePostProcessor(dataset=args.dataset,ents=ents,doc2kg=subkg,chunks_index=chunks_index)
 
-
     filter_pp = GraphFilterPostProcessor(dataset=args.dataset,use_tpt=args.use_tpt,topk=args.top_k,ents=ents,doc2kg=subkg,chunks_index=chunks_index,reranker=bge_reranker)
     naive_pp = NaivePostprocessor(dataset=args.dataset)
 
@@ -192,6 +191,12 @@ def process_sample(args,sample,kg,bge_reranker,encoder=None):
             threshold=args.sem_threshold,
         )
         postprocessors.append(sem_pp)
+    if args.method == 'cross':
+        cross_pp = CrossEncoderFilterPostProcessor(
+            encoder=encoder,
+            threshold=args.cross_threshold,
+        )
+        postprocessors.append(cross_pp)
     postprocessors.extend([filter_pp, naive_pp])
     query_engine = RetrieverQueryEngine(
         retriever=retriever,
@@ -230,6 +235,8 @@ def run_config(args, data, kg):
         'method': args.method,
         'sem_model': args.sem_model if args.method == 'sem' else None,
         'sem_threshold': args.sem_threshold if args.method == 'sem' else None,
+        'cross_model': args.cross_model if args.method == 'cross' else None,
+        'cross_threshold': args.cross_threshold if args.method == 'cross' else None,
     }
 
 
@@ -281,6 +288,11 @@ def kgrag_distractor_predict(args,data,kg,state):
         if args.method == 'sem':
             encoder = SentenceTransformer(
                 args.sem_model,
+                device='cpu',
+            )
+        if args.method == 'cross':
+            encoder = CrossEncoder(
+                args.cross_model,
                 device='cpu',
             )
     for sample in tqdm(pending):
@@ -344,10 +356,16 @@ if __name__=='__main__':
     parser.add_argument('--reranker_fp16', action='store_true', help='Enable reranker half precision on GPU')
     parser.add_argument('--resume', action='store_true', help='Resume matching checkpoint and retry failures')
 
+    # SEM or CROSS
+    parser.add_argument('--method', choices=['baseline', 'sem', 'cross'], default='baseline')
+
     # SEM
-    parser.add_argument('--method', choices=['baseline', 'sem'], default='baseline')
     parser.add_argument('--sem_model', default='sentence-transformers/all-MiniLM-L6-v2')
     parser.add_argument('--sem_threshold', type=float, default=0.5)
+
+    # CROSS
+    parser.add_argument('--cross_model', default='cross-encoder/ms-marco-MiniLM-L-6-v2')
+    parser.add_argument('--cross_threshold', type=float, default=0.5)
 
     args = parser.parse_args()
 
