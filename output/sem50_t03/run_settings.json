@@ -1,0 +1,14 @@
+{
+  "dataset": "hotpotqa",
+  "data_path": "output/baseline50/hotpot_50.json",
+  "kg_dir": "output/baseline50/kgs",
+  "result_path": "output/sem50_t03/predictions.json",
+  "model_name": "llama3:8b",
+  "embed_model_name": "mxbai-embed-large",
+  "reranker": "BAAI/bge-reranker-large",
+  "reranker_device": "cpu",
+  "method": "sem",
+  "sem_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "sem_threshold": 0.3,
+  "top_k": 10
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Always use this repository's environment, even when called from another folder.
+set -euo pipefail
+root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+if [[ ! -x "$root/.venv/bin/python" ]]; then
+  echo "Create .venv first; see WORKFLOW.md." >&2
+  exit 1
+fi
+exec "$root/.venv/bin/python" "$root/scripts/experiments.py" "$@"

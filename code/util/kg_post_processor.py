@@ -3,6 +3,9 @@ import re
 import time
 import networkx as nx
 
+from sentence_transformers import SentenceTransformer
+from numpy import argmax
+
 from typing import List,Dict,Optional,Set
 from FlagEmbedding import FlagReranker
 from llama_index.core.schema import TextNode, NodeWithScore, QueryBundle
@@ -435,3 +438,43 @@ class GraphFilterPostProcessor(BaseNodePostprocessor):
             if node.node.id_ in wanted_ctxs:
                 wanted_nodes.append(node)
         return wanted_nodes
+
+class SemanticFilterPostProcessor(BaseNodePostprocessor):
+
+    "KnowledgeGraph-based Node Processor"
+    encoder: SentenceTransformer
+    threshold: float
+
+    @classmethod
+    def class_name(cls):
+        return "SemanticFilterPostProcessor"
+
+    def _postprocess_nodes(self, nodes, query_bundle=None):
+        if not nodes:
+            return []
+
+        question = query_bundle.query_str
+
+        # Create question and chunk (matrix) vectors
+        question_vector = self.encoder.encode(
+            question, normalize_embeddings=True,
+        )
+        chunk_vectors = self.encoder.encode(
+            [node.node.text for node in nodes],
+            normalize_embeddings=True,
+        )
+
+        # Matrix multiplication (one dot product per row / one similarity score per chunk)
+        similarites = chunk_vectors @ question_vector
+
+        kept_nodes = [
+            node
+            for node, score in zip(nodes, similarites)
+            if score >= self.threshold
+        ]
+
+        # None pass threshold, keep the single sentence with the highest sematic similarity score
+        if not kept_nodes:
+            kept_nodes = [nodes[argmax(similarites)]]
+
+        return kept_nodes

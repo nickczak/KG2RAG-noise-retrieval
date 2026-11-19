@@ -1,0 +1,13 @@
+{
+  "dataset": "hotpotqa",
+  "data_hash": "989ce3c6819a4616f7556960cde252068db223ac03459e7549b38c4279b769c3",
+  "kg_hash": "72523f6c619bd17dbdfbab14aac586307db2d100622f27ad30df879924b5798c",
+  "source_hash": "2eb005a1a0117a894659f6cec758566876c55c61d77325951ddd6a40cce82a2f",
+  "model_name": "llama3:8b",
+  "embed_model_name": "mxbai-embed-large",
+  "reranker": "BAAI/bge-reranker-large",
+  "reranker_device": "cpu",
+  "reranker_fp16": false,
+  "top_k": 10,
+  "use_tpt": false
+}

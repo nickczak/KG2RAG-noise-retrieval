@@ -16,9 +16,31 @@ __pycache__/
 .kateproject.notes
 .DS_Store
 
-# Generated experiment artifacts; retain the walkthrough
+# Show experiment folders and small research records in Git/Kate.
+# Ignore graphs, checkpoints, smoke artifacts, source snapshots, and raw logs.
 /output/*
-!/output/smoke/
+!/output/README.md
+!/output/*/
+/output/*/*
+!/output/*/README.md
+!/output/*/experiment.json
+!/output/*/run_settings.json
+!/output/*/run.sh
+!/output/*/evaluate.py
+!/output/*/hotpot*.json
+!/output/*/selection.json
+!/output/*/config.json
+!/output/*/metrics.json
+!/output/*/summary.json
+!/output/*/timing.json
+!/output/*/provenance.json
+!/output/*/predictions.json
+!/output/*/environment.txt
+!/output/*/commit.txt
+!/output/*/ollama-version.txt
+!/output/*/ollama-models.txt
+
+# Original one-question smoke artifacts remain local.
 /output/smoke/*
 !/output/smoke/README.md
 

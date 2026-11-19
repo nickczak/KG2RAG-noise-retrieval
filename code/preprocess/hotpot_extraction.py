@@ -1,4 +1,7 @@
 import os
+import argparse
+import tempfile
+from pathlib import Path
 import ujson as json
 from tqdm import tqdm
 from llama_index.llms.ollama import Ollama
@@ -28,38 +31,60 @@ def extract_triplets(llm, ctx):
     triplets = [[h,r,t] for (h,r,t) in triplets]
     return triplets
 
-data_path = '../../data/hotpotqa/hotpot_dev_distractor_v1.json'
-with open(data_path) as f:
-    data = json.load(f)
-
-triplets = {}
-llm = Ollama(model='llama3:8b',request_timeout=120)
-out_dir = '../../data/hotpotqa/kgs/extract_subkgs'
-count = 0
-
-for sample in tqdm(data):
-    question = sample['question']
-    answer = sample['answer']
-    ctxs = sample['context']
-    for ctx in ctxs:
-        ent = ctx[0]
-        if ent in triplets:
-            continue
-        out_path = os.path.join(out_dir,f'{ent.replace("/","_")}.json')
-        if os.path.exists(out_path):
-            continue
-        triplets[ent] = {}
-        for i in range(len(ctx[1])):
-            if not i==0:
-                ctx_text = f'{ent}: {ctx[1][i]}'
-            else:
-                ctx_text = ctx[1][i]
-            ext_triplets = extract_triplets(llm,ctx_text)
-            if len(ext_triplets)==0:
+def main(args):
+    """Extract each paragraph once; reuse complete files after interruption."""
+    with open(args.data_path) as stream:
+        data = json.load(stream)
+    out_dir = Path(args.kg_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    seen = set()
+    filenames = {}
+    for sample in data:
+        for title, _ in sample['context']:
+            filename = title.replace('/', '_') + '.json'
+            if filename in filenames and filenames[filename] != title:
+                raise ValueError(f'Graph filename collision: {title} and {filenames[filename]}')
+            filenames[filename] = title
+    llm = Ollama(model=args.model_name, request_timeout=args.timeout)
+    count = 0
+    for sample in tqdm(data, desc='Questions'):
+        for ent, sentences in sample['context']:
+            if ent in seen:
                 continue
-            triplets[ent][i] = ext_triplets
-        with open(out_path,'w') as f:
-            json.dump(triplets[ent],f)
+            seen.add(ent)
+            out_path = out_dir / (ent.replace('/', '_') + '.json')
+            if out_path.exists():
+                # Do not silently skip a truncated/corrupt JSON file.
+                with out_path.open() as stream:
+                    json.load(stream)
+                continue
+            graph = {}
+            for i, sentence in enumerate(tqdm(sentences, desc=ent[:40], leave=False)):
+                ctx_text = sentence if i == 0 else f'{ent}: {sentence}'
+                triples = extract_triplets(llm, ctx_text)
+                if triples:
+                    graph[i] = triples
+            # The old extractor could leave a partial JSON on interruption.
+            name = None
+            try:
+                with tempfile.NamedTemporaryFile(mode='w', dir=out_dir, delete=False) as stream:
+                    name = stream.name
+                    json.dump(graph, stream)
+                    stream.flush()
+                    os.fsync(stream.fileno())
+                os.replace(name, out_path)
+            finally:
+                if name and os.path.exists(name):
+                    os.unlink(name)
             count += 1
+    print(f'Newly extracted paragraph KGs: {count}')
 
-print(f'Newly extract entity KGs number: {count}')
+
+if __name__ == '__main__':
+    root = Path(__file__).resolve().parents[2]
+    parser = argparse.ArgumentParser(description='Extract HotpotQA paragraph graphs with Ollama')
+    parser.add_argument('--data_path', default=str(root / 'data/hotpotqa/hotpot_dev_distractor_v1.json'))
+    parser.add_argument('--kg_dir', default=str(root / 'data/hotpotqa/kgs/extract_subkgs'))
+    parser.add_argument('--model_name', default='llama3:8b')
+    parser.add_argument('--timeout', type=float, default=120)
+    main(parser.parse_args())
