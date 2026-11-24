@@ -1,0 +1,17 @@
+{
+  "method": "baseline",
+  "data_path": "output/baseline50/hotpot_50.json",
+  "kg_dir": "output/baseline50/kgs",
+  "model_name": "llama3:8b",
+  "embed_model_name": "mxbai-embed-large",
+  "reranker": "BAAI/bge-reranker-large",
+  "reranker_device": "cpu",
+  "sem_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "sem_threshold": 0.5,
+  "cross_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "cross_threshold": 0.5,
+  "joint_keep_k": 10,
+  "cross_weight": 0.7,
+  "score_cache_dir": "output/score_cache",
+  "top_k": 10
+}

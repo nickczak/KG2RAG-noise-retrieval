@@ -1,0 +1,42 @@
+{
+  "dataset": "hotpotqa",
+  "data_hash": "f2347d91fb1cc2a3f7508f2794e75996db5fd3cc285b4c6202a670935058560c",
+  "kg_hash": "4121055ec5df3062be19c3be8522a8c1d406e229a328cac904704e4013aa507c",
+  "source_hash": "07007c7b3ded43fc94a88e2a1c28f12619e076c961abe4abd1c505058c902f9c",
+  "model_name": "llama3:8b",
+  "embed_model_name": "mxbai-embed-large",
+  "reranker": "BAAI/bge-reranker-large",
+  "reranker_device": "cpu",
+  "reranker_fp16": false,
+  "top_k": 3,
+  "use_tpt": false,
+  "method": "path_reuse_diverse",
+  "sem_model": null,
+  "sem_threshold": null,
+  "cross_model": null,
+  "cross_threshold": null,
+  "joint_keep_k": 7,
+  "cross_weight": 0.7,
+  "native_reranker_identity": {
+    "model": {
+      "checkpoint_sha256": "c0e65e1cf67c86ab37126e48989992c19621be14d0d9a8317cb1292de0695bf4",
+      "libraries": {
+        "FlagEmbedding": "1.3.4",
+        "transformers": "4.48.3",
+        "torch": "2.15.0+cpu",
+        "numpy": "1.26.4"
+      },
+      "cache_schema": 1
+    },
+    "scoring": {
+      "devices": [
+        "cpu"
+      ],
+      "use_fp16": false,
+      "batch_size": 128,
+      "max_length": 512,
+      "normalize": false
+    },
+    "namespace": "e1a1fffe1b2ea458c1c3df2a069f3aeb4e87f58c1b0b03f2fa32395279047b28"
+  }
+}

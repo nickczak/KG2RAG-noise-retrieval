@@ -25,13 +25,15 @@ __pycache__/
 !/output/*/README.md
 !/output/*/experiment.json
 !/output/*/run_settings.json
-!/output/*/run.sh
-!/output/*/evaluate.py
 !/output/*/hotpot*.json
 !/output/*/selection.json
 !/output/*/config.json
 !/output/*/metrics.json
 !/output/*/summary.json
+!/output/*/score_reuse.json
+!/output/*/usage.json
+!/output/*/evidence_review.json
+!/output/*/gnn_mrl.json
 !/output/*/timing.json
 !/output/*/provenance.json
 !/output/*/predictions.json
@@ -51,3 +53,8 @@ __pycache__/
 # Extracted graphs and local model caches
 /data/**/kgs/
 /.cache/
+
+# HotpotQA training source and local GNN checkpoints are reproducible artifacts,
+# too large or machine-specific to commit. Keep the experiment notes visible.
+/output/gnn_train/hotpot_train.json
+/output/gnn_train/*.pt

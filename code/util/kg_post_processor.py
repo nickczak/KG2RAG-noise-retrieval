@@ -2,11 +2,12 @@ import random
 import re
 import time
 import networkx as nx
+import numpy as np
 
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from numpy import argmax
 
-from typing import List,Dict,Optional,Set
+from typing import Any,List,Dict,Optional,Set
 from FlagEmbedding import FlagReranker
 from llama_index.core.schema import TextNode, NodeWithScore, QueryBundle
 from llama_index.core.postprocessor.types import BaseNodePostprocessor
@@ -261,11 +262,130 @@ class GraphFilterPostProcessor(BaseNodePostprocessor):
     ents: Set[str] = Field
     doc2kg: Dict[str,Dict[str,List[List[str]]]] = Field
     chunks_index: Dict[str,Dict[str,str]] = Field
-    reranker: FlagReranker = Field
+    reranker: Any = Field
+    native_scores: Any = None
+    path_mode: bool = False
+    cross_weight: float = Field(default=0.7, ge=0, le=1)
+    reuse_audit: Dict[str, Any] = Field(default_factory=dict)
 
     @classmethod
     def class_name(cls) -> str:
         return "GraphFilterPostprocessor"
+
+    def _native_rank(self, source_lists, texts, question):
+        """Fuse cached native cosine and BGE ranks at the same candidate unit."""
+        cross = np.asarray(self.reranker.compute_score([(question, text) for text in texts]),
+                           dtype=float).reshape(-1)
+        if len(cross) != len(texts) or not np.all(np.isfinite(cross)):
+            raise ValueError('Invalid native BGE group scores')
+        try:
+            semantic = np.array([np.mean([self.native_scores.scores[source]
+                                         for source in dict.fromkeys(sources)])
+                                 for sources in source_lists])
+        except KeyError as error:
+            raise ValueError(f'Missing native semantic score for {error}') from error
+        if not np.all(np.isfinite(semantic)):
+            raise ValueError('Invalid native group semantic similarities')
+        fused = self.cross_weight * _rank_percentiles(cross) + (1-self.cross_weight) * _rank_percentiles(semantic)
+        traces = [{'source_ids': list(sources), 'semantic_mean': float(sem),
+                   'bge_score': float(bge), 'fused_rank': float(rank)}
+                  for sources, sem, bge, rank in zip(source_lists, semantic, cross, fused)]
+        return semantic, cross, fused, traces
+
+    def _select_native(self, nodes, query_bundle, source_lists, texts):
+        """Use KG paths for the active method or preserve complete KG2RAG groups."""
+        if not nodes:
+            return []
+        if self.path_mode:
+            return self._select_paths(nodes, query_bundle)
+        groups = [(sources, text) for sources, text in zip(source_lists, texts) if sources]
+        selected, chosen, group_trace = set(), [], []
+        if groups:
+            sources, group_texts = map(list, zip(*groups))
+            sem, cross, fused, group_trace = self._native_rank(sources, group_texts, query_bundle.query_str)
+            order = sorted(range(len(groups)), key=lambda i: (-fused[i], -cross[i], -sem[i], i))
+            anchor = max(range(len(groups)), key=lambda i: (cross[i], sem[i], -i))
+            if len(set(sources[anchor])) <= self.topk:
+                order = [anchor] + [i for i in order if i != anchor]
+            for i in order:
+                combined = selected | set(sources[i])
+                if len(combined) > self.topk:
+                    continue
+                selected = combined
+                chosen.append(i)
+            for i, trace in enumerate(group_trace):
+                trace['selected_group'] = i in chosen
+        self.reuse_audit = {'selection_unit': 'complete_groups', 'group_scores': group_trace,
+                            'sentence_scores': [], 'kept_ids': []}
+        if not selected:
+            sources = [[node.node.id_] for node in nodes]
+            sem, cross, _, trace = self._native_rank(sources, [node.node.text for node in nodes], query_bundle.query_str)
+            kept = select_joint_chunks(nodes, sem, cross, self.topk, self.cross_weight)
+            selected = {node.node.id_ for node in kept}
+            for row in trace:
+                row['selected'] = row['source_ids'][0] in selected
+            self.reuse_audit.update(selection_unit='sentence_fallback', sentence_scores=trace)
+        self.reuse_audit['kept_ids'] = [node.node.id_ for node in nodes if node.node.id_ in selected]
+        return [node for node in nodes if node.node.id_ in selected]
+
+    def _select_paths(self, nodes, query_bundle):
+        """Rank candidate endpoints and retain their shortest paths from retrieval seeds."""
+        node_by_id = {node.node.id_: node for node in nodes}
+        ids = list(node_by_id)
+        graph = nx.Graph()
+        entities_by_id = {}
+        for node in nodes:
+            parts = node.node.id_.split('##')
+            title, sentence = parts[-2], parts[-1]
+            triples = self.doc2kg.get(title, {}).get(sentence, [])
+            entities = {str(value).strip().casefold() for triple in triples
+                        for value in (triple[0], triple[2])
+                        if len(triple) >= 3 and str(value).strip()}
+            entities_by_id[node.node.id_] = entities
+            graph.add_node(node.node.id_)
+        for i, left in enumerate(ids):
+            for right in ids[i + 1:]:
+                shared = entities_by_id[left] & entities_by_id[right]
+                if shared:
+                    graph.add_edge(left, right, bridges=sorted(shared))
+
+        seeds = sorted(self.native_scores.seed_ids & set(node_by_id))
+        if not seeds:
+            raise ValueError('Path selection requires at least one original retrieval seed')
+        query = query_bundle.query_str
+        cross = np.asarray(self.reranker.compute_score(
+            [(query, node_by_id[node_id].node.text) for node_id in ids]), dtype=float).reshape(-1)
+        semantic = np.asarray([self.native_scores.scores[node_id] for node_id in ids], dtype=float)
+        fused = (self.cross_weight * _rank_percentiles(cross) +
+                 (1-self.cross_weight) * _rank_percentiles(semantic))
+        rank = sorted(range(len(ids)), key=lambda i: (-fused[i], -cross[i], -semantic[i], ids[i]))
+
+        chosen, paths = set(), []
+        for i in rank:
+            endpoint = ids[i]
+            options = []
+            for seed in seeds:
+                try:
+                    path = nx.shortest_path(graph, seed, endpoint)
+                    options.append((len(path) - 1, tuple(path)))
+                except nx.NetworkXNoPath:
+                    continue
+            if not options:
+                continue
+            hops, path = min(options, key=lambda item: (item[0], item[1]))
+            if len(chosen | set(path)) <= self.topk:
+                chosen.update(path)
+                paths.append({'endpoint': endpoint, 'path': list(path), 'hops': hops,
+                              'bridges': [graph[a][b]['bridges'] for a, b in zip(path, path[1:])],
+                              'semantic_score': float(semantic[i]), 'bge_score': float(cross[i]),
+                              'fused_rank': float(fused[i])})
+        if not chosen:
+            chosen.add(seeds[0])
+        self.reuse_audit = {'selection_unit': 'shortest_seed_paths', 'seed_ids': seeds,
+                            'paths': paths, 'path_selected_ids': [node_id for node_id in ids if node_id in chosen],
+                            'candidate_count': len(nodes), 'edge_count': graph.number_of_edges(),
+                            'kept_ids': [node_id for node_id in ids if node_id in chosen]}
+        return [node for node in nodes if node.node.id_ in chosen]
 
     def _postprocess_nodes(
         self,
@@ -406,6 +526,9 @@ class GraphFilterPostProcessor(BaseNodePostprocessor):
             cand_tpts.append(tpt_str)
         
 
+        if self.native_scores is not None:
+            return self._select_native(nodes, query_bundle, cand_ids_lists, cand_strs)
+
         if len(cand_strs)==0:
             scores = self.reranker.compute_score([(query_bundle.query_str,node.node.text) for node in nodes])
             sorted_seqs = sorted(range(len(scores)),key=lambda x:scores[x],reverse=True)
@@ -483,7 +606,7 @@ class SemanticFilterPostProcessor(BaseNodePostprocessor):
 
 class CrossEncoderFilterPostProcessor(BaseNodePostprocessor):
 
-    "KnowledgeGraph-based Node Processor"
+    """Filter expanded sentences by joint question–sentence relevance scores."""
     encoder: CrossEncoder
     threshold: float
 
@@ -511,3 +634,81 @@ class CrossEncoderFilterPostProcessor(BaseNodePostprocessor):
             kept_nodes = [nodes[argmax(scores)]]
 
         return kept_nodes
+
+
+def _rank_percentiles(scores):
+    """Higher is better; give equal scores equal average ranks."""
+    n = len(scores)
+    if n <= 1:
+        return np.ones(n)
+    order = np.argsort(-scores, kind='stable')
+    ranks = np.empty(n, dtype=float)
+    start = 0
+    while start < n:
+        end = start + 1
+        while end < n and scores[order[end]] == scores[order[start]]:
+            end += 1
+        ranks[order[start:end]] = 1 - ((start + end - 1) / 2) / (n - 1)
+        start = end
+    return ranks
+
+
+def select_joint_chunks(nodes, sem_scores, cross_scores, keep_k=10, cross_weight=0.7):
+    """Select once using both rankings, always protecting the best CROSS match.
+
+    Raw cosine values and logits are never averaged. Each model's scores become
+    within-query rank percentiles; their weighted sum ranks the candidates.
+    The top CROSS candidate is reserved, then remaining slots follow fused rank.
+    Return original node objects in original order without replacing their scores.
+    """
+    if not isinstance(keep_k, int) or isinstance(keep_k, bool) or keep_k < 1:
+        raise ValueError('joint keep_k must be a positive integer')
+    if not np.isfinite(cross_weight) or not 0 <= cross_weight <= 1:
+        raise ValueError('cross_weight must be finite and between 0 and 1')
+    sem_scores = np.asarray(sem_scores, dtype=float).reshape(-1)
+    cross_scores = np.asarray(cross_scores, dtype=float).reshape(-1)
+    if len(sem_scores) != len(nodes) or len(cross_scores) != len(nodes):
+        raise ValueError('Each candidate needs one SEM score and one CROSS score')
+    if not np.all(np.isfinite(sem_scores)) or not np.all(np.isfinite(cross_scores)):
+        raise ValueError('SEM and CROSS scores must be finite')
+    if not nodes:
+        return []
+    fused = (cross_weight * _rank_percentiles(cross_scores) +
+             (1 - cross_weight) * _rank_percentiles(sem_scores))
+    # Tie breaks use each model separately, never an average of raw score scales.
+    ranked = sorted(range(len(nodes)), key=lambda i: (-fused[i], -cross_scores[i], -sem_scores[i], i))
+    anchor = max(range(len(nodes)), key=lambda i: (cross_scores[i], sem_scores[i], -i))
+    selected = {anchor}
+    for index in ranked:
+        if len(selected) >= min(keep_k, len(nodes)):
+            break
+        selected.add(index)
+    return [node for i, node in enumerate(nodes) if i in selected]
+
+
+class JointFilterPostProcessor(BaseNodePostprocessor):
+    """Score every expanded sentence with both encoders, then select once."""
+
+    sem_encoder: SentenceTransformer
+    cross_encoder: CrossEncoder
+    keep_k: int = Field(default=10, ge=1)
+    cross_weight: float = Field(default=0.7, ge=0, le=1)
+
+    @classmethod
+    def class_name(cls):
+        return 'JointFilterPostProcessor'
+
+    def _postprocess_nodes(self, nodes, query_bundle=None):
+        if not nodes:
+            return []
+        if query_bundle is None:
+            raise ValueError('Joint filtering requires a query')
+        question = query_bundle.query_str
+        texts = [node.node.text for node in nodes]
+        query_vector = self.sem_encoder.encode(question, normalize_embeddings=True)
+        chunk_vectors = self.sem_encoder.encode(texts, normalize_embeddings=True)
+        sem_scores = chunk_vectors @ query_vector
+        cross_scores = self.cross_encoder.predict([(question, text) for text in texts])
+        kept = select_joint_chunks(nodes, sem_scores, cross_scores, self.keep_k, self.cross_weight)
+        print(f'Joint selection: {len(nodes)} candidates -> {len(kept)} kept; CROSS weight={self.cross_weight}')
+        return kept

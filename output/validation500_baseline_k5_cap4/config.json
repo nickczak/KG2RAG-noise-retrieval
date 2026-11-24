@@ -1,0 +1,23 @@
+{
+  "dataset": "hotpotqa",
+  "data_hash": "95d9625273c9b6b626ec9c8ea3bd5ef8d30bd194f1b6bb15e01d37a3e2b47d9f",
+  "kg_hash": "cd1040d67ea8810d30e8336716955c69b0b1121d220aaa645d3f337379df3b65",
+  "source_hash": "17adae82591f592851a86f2c242e39b3e8b59d01c4e895d65c611c593164b916",
+  "model_name": "llama3:8b",
+  "embed_model_name": "mxbai-embed-large",
+  "temperature": 0.0,
+  "reranker": "BAAI/bge-reranker-large",
+  "reranker_device": "cpu",
+  "reranker_fp16": false,
+  "top_k": 5,
+  "use_tpt": false,
+  "method": "baseline",
+  "sem_model": null,
+  "sem_threshold": null,
+  "cross_model": null,
+  "cross_threshold": null,
+  "joint_keep_k": null,
+  "cross_weight": null,
+  "final_keep_k": 4,
+  "native_reranker_identity": null
+}

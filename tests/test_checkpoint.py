@@ -19,8 +19,9 @@ class CheckpointTests(unittest.TestCase):
             dataset='hotpotqa', result_path=str(Path(self.directory.name) / 'pred.json'),
             model_name='llama3:8b', embed_model_name='mxbai-embed-large',
             reranker='test', reranker_device='cpu', reranker_fp16=False,
-            top_k=10, use_tpt=False, resume=False,
-            method='baseline', sem_model=None, sem_threshold=None)
+            top_k=10, use_tpt=False, resume=False, temperature=0.0, final_keep_k=None,
+            method='baseline', sem_model=None, sem_threshold=None,
+            cross_model=None, cross_threshold=None)
         self.data = [{'_id': 'a'}, {'_id': 'b'}]
 
     def state(self):
@@ -109,6 +110,103 @@ class CheckpointTests(unittest.TestCase):
                     self.assertEqual(process.call_count, 2)
                     for call in process.call_args_list:
                         self.assertIs(call.args[4], encoder.return_value)
+
+    def test_cross_encoder_loaded_once_and_settings_guard_resume(self):
+        self.args.method = 'cross'
+        self.args.cross_model = 'cross-encoder/ms-marco-MiniLM-L6-v2'
+        self.args.cross_threshold = 0.5
+        with patch.object(runner, 'init_model'), patch.object(runner, 'FlagReranker'):
+            with patch.object(runner, 'CrossEncoder') as encoder:
+                with patch.object(runner, 'process_sample',
+                                  side_effect=[('a', 'one', []), ('b', 'two', [])]) as process:
+                    runner.kgrag_distractor_predict(self.args, self.data, {}, self.state())
+                    encoder.assert_called_once_with(self.args.cross_model, device='cpu')
+                    for call in process.call_args_list:
+                        self.assertIs(call.args[4], encoder.return_value)
+        self.args.resume = True
+        self.state()
+        for key, changed in [('cross_model', 'other'), ('cross_threshold', 0.3)]:
+            old = getattr(self.args, key)
+            setattr(self.args, key, changed)
+            with self.assertRaises(ValueError):
+                self.state()
+            setattr(self.args, key, old)
+
+    def test_combined_loads_each_encoder_once_and_checks_both_settings(self):
+        self.args.method = 'sem_cross'
+        self.args.sem_model, self.args.sem_threshold = 'sem', 0.3
+        self.args.cross_model, self.args.cross_threshold = 'cross', 0.5
+        with patch.object(runner, 'init_model'), patch.object(runner, 'FlagReranker'):
+            with patch.object(runner, 'SentenceTransformer') as sem, patch.object(runner, 'CrossEncoder') as cross:
+                with patch.object(runner, 'process_sample', side_effect=[('a', 'one', []), ('b', 'two', [])]) as process:
+                    runner.kgrag_distractor_predict(self.args, self.data, {}, self.state())
+                    sem.assert_called_once_with('sem', device='cpu')
+                    cross.assert_called_once_with('cross', device='cpu')
+                    self.assertEqual(process.call_count, 2)
+                    for call in process.call_args_list:
+                        self.assertIs(call.args[4], sem.return_value)
+                        self.assertIs(call.args[5], cross.return_value)
+        self.args.resume = True
+        self.state()
+        for key, changed in [('sem_model', 'other'), ('sem_threshold', 0.1),
+                             ('cross_model', 'other'), ('cross_threshold', 1.0)]:
+            old = getattr(self.args, key)
+            setattr(self.args, key, changed)
+            with self.assertRaises(ValueError):
+                self.state()
+            setattr(self.args, key, old)
+
+    def test_joint_loads_both_models_and_guards_all_result_affecting_settings(self):
+        self.args.method = 'joint'
+        self.args.sem_model, self.args.cross_model = 'sem', 'cross'
+        self.args.joint_keep_k, self.args.cross_weight = 10, 0.7
+        with patch.object(runner, 'init_model'), patch.object(runner, 'FlagReranker'):
+            with patch.object(runner, 'SentenceTransformer') as sem, patch.object(runner, 'CrossEncoder') as cross:
+                with patch.object(runner, 'process_sample', side_effect=[('a', 'one', []), ('b', 'two', [])]) as process:
+                    runner.kgrag_distractor_predict(self.args, self.data, {}, self.state())
+                    sem.assert_called_once_with('sem', device='cpu')
+                    cross.assert_called_once_with('cross', device='cpu')
+                    for call in process.call_args_list:
+                        self.assertIs(call.args[4], sem.return_value)
+                        self.assertIs(call.args[5], cross.return_value)
+        self.args.resume = True
+        config = self.state()['config']
+        self.assertIsNone(config['sem_threshold'])
+        self.assertIsNone(config['cross_threshold'])
+        for key, changed in [('sem_model', 'other'), ('cross_model', 'other'),
+                             ('joint_keep_k', 5), ('cross_weight', 0.8)]:
+            old = getattr(self.args, key)
+            setattr(self.args, key, changed)
+            with self.assertRaises(ValueError):
+                self.state()
+            setattr(self.args, key, old)
+
+    def test_native_reuse_uses_only_shared_bge_and_records_audit(self):
+        self.args.method = 'reuse'
+        self.args.joint_keep_k, self.args.cross_weight = 5, 0.7
+        self.args.native_reranker_identity = {'weights': 'one'}
+        shared = object()
+        def process(args, sample, kg, reranker, encoder, cross_encoder, score_audit,
+                    usage_audit, usage_handler):
+            self.assertIs(reranker, shared)
+            self.assertIsNone(encoder)
+            self.assertIsNone(cross_encoder)
+            score_audit.update(seed_scores_reused=1)
+            return sample['_id'], 'answer', []
+        with patch.object(runner, 'init_model'), patch.object(runner, 'FlagReranker') as bge:
+            with patch.object(runner, 'SentenceTransformer') as sem, patch.object(runner, 'CrossEncoder') as cross:
+                with patch.object(runner, 'process_sample', side_effect=process):
+                    state = self.state()
+                    runner.kgrag_distractor_predict(self.args, self.data, {}, state, shared)
+                sem.assert_not_called()
+                cross.assert_not_called()
+                bge.assert_not_called()
+        self.assertEqual(state['score_reuse']['a']['seed_scores_reused'], 1)
+        self.args.resume = True
+        self.state()
+        self.args.native_reranker_identity = {'weights': 'two'}
+        with self.assertRaises(ValueError):
+            self.state()
 
 
 if __name__ == '__main__':

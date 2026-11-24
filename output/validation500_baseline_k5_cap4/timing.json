@@ -1,0 +1,14 @@
+[
+  {
+    "stage": "extraction",
+    "started_utc": "2026-11-21T07:00:59.522938+00:00",
+    "seconds": 61341.44467271601,
+    "exit_code": 0
+  },
+  {
+    "stage": "prediction",
+    "started_utc": "2026-11-22T06:26:49.262152+00:00",
+    "seconds": 5587.944612271996,
+    "exit_code": 0
+  }
+]

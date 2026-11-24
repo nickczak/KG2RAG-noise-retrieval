@@ -35,15 +35,18 @@ class ExperimentTests(unittest.TestCase):
         target.parent.mkdir(parents=True)
         shutil.copyfile(REPOSITORY / 'code/util/hotpot_evaluate_v1.py', target)
 
-    def new(self, name='trial'):
-        workflow.new(argparse.Namespace(name=name, method='sem', data='data.json',
+    def new(self, name='trial', **overrides):
+        args = argparse.Namespace(name=name, method='sem', data='data.json',
                      kgs='kgs', threshold=0.3, top_k=10, model='llama3:8b',
                      embedding='mxbai-embed-large', reranker='BAAI/bge-reranker-large',
-                     sem_model='encoder'))
+                     sem_model='encoder', temperature=0.0)
+        for key, value in overrides.items():
+            setattr(args, key, value)
+        workflow.new(args)
         return self.root / 'output' / name
 
-    def complete(self, name='trial'):
-        path = self.new(name)
+    def complete(self, name='trial', **options):
+        path = self.new(name, **options)
         config = {key: value for key, value in workflow.settings(name).items()
                   if key not in ('data_path', 'kg_dir')}
         config.update(dataset='hotpotqa', reranker_fp16=False, use_tpt=False,
@@ -86,6 +89,99 @@ class ExperimentTests(unittest.TestCase):
         self.assertEqual(command[command.index('--method') + 1], 'sem')
         self.assertIn(str(path / 'smoke/predictions.json'), command)
         self.assertEqual(workflow.read(path / 'smoke/hotpot_one.json'), self.data)
+
+    def test_cross_command_and_unbounded_relevance_threshold(self):
+        path = self.new()
+        plan = workflow.read(path / 'experiment.json')
+        plan.update(method='cross', cross_threshold=4.0)
+        workflow.write(path / 'experiment.json', plan)
+        with patch.object(workflow, 'record_environment'), patch.object(workflow, 'timed_call') as call:
+            workflow.run(argparse.Namespace(name='trial', smoke=True, resume=False))
+        command = call.call_args.args[0]
+        self.assertEqual(command[command.index('--cross_threshold') + 1], '4.0')
+        self.assertEqual(command[command.index('--cross_model') + 1], 'cross-encoder/ms-marco-MiniLM-L6-v2')
+
+    def test_combined_command_has_separate_thresholds(self):
+        self.new(method='sem_cross', threshold=None, sem_threshold=0.3, cross_threshold=0.5)
+        with patch.object(workflow, 'record_environment'), patch.object(workflow, 'timed_call') as call:
+            workflow.run(argparse.Namespace(name='trial', smoke=True, resume=False))
+        command = call.call_args.args[0]
+        self.assertEqual(command[command.index('--method') + 1], 'sem_cross')
+        self.assertEqual(command[command.index('--sem_threshold') + 1], '0.3')
+        self.assertEqual(command[command.index('--cross_threshold') + 1], '0.5')
+
+    def test_combined_rejects_ambiguous_or_invalid_thresholds(self):
+        with self.assertRaises(ValueError):
+            self.new(method='sem_cross', threshold=0.3)
+        with self.assertRaises(ValueError):
+            self.new(method='sem_cross', threshold=None, sem_threshold=2.0)
+        with self.assertRaises(ValueError):
+            self.new(method='sem_cross', threshold=None, sem_threshold=0.3, cross_threshold=float('nan'))
+
+    def test_combined_evaluation_checks_each_filters_model_and_threshold(self):
+        path = self.complete(method='sem_cross', threshold=None, sem_threshold=0.3, cross_threshold=0.5)
+        workflow.completed('trial')
+        plan = workflow.read(path / 'experiment.json')
+        for key, changed in [('sem_model', 'other'), ('sem_threshold', 0.2),
+                             ('cross_model', 'other'), ('cross_threshold', 1.0)]:
+            old = plan[key]
+            plan[key] = changed
+            workflow.write(path / 'experiment.json', plan)
+            with self.assertRaises(ValueError):
+                workflow.completed('trial')
+            plan[key] = old
+        workflow.write(path / 'experiment.json', plan)
+
+    def test_joint_command_and_evaluation_validate_its_selection_policy(self):
+        path = self.complete(method='joint', threshold=None, joint_keep_k=6, cross_weight=0.8)
+        workflow.completed('trial')
+        with patch.object(workflow, 'record_environment'), patch.object(workflow, 'timed_call') as call:
+            workflow.run(argparse.Namespace(name='trial', smoke=True, resume=False))
+        command = call.call_args.args[0]
+        self.assertEqual(command[command.index('--joint_keep_k') + 1], '6')
+        self.assertEqual(command[command.index('--cross_weight') + 1], '0.8')
+        self.assertIn('--cross_model', command)
+        self.assertNotIn('--sem_threshold', command)
+        self.assertNotIn('--cross_threshold', command)
+        plan = workflow.read(path / 'experiment.json')
+        for key, value in [('joint_keep_k', 7), ('cross_weight', 0.2),
+                           ('sem_model', 'other'), ('cross_model', 'other')]:
+            old = plan[key]
+            plan[key] = value
+            workflow.write(path / 'experiment.json', plan)
+            with self.assertRaises(ValueError):
+                workflow.completed('trial')
+            plan[key] = old
+        workflow.write(path / 'experiment.json', plan)
+
+    def test_joint_rejects_cutoffs_and_invalid_weights(self):
+        for options in [dict(threshold=0.3), dict(sem_threshold=0.3),
+                        dict(cross_threshold=0.5), dict(joint_keep_k=0),
+                        dict(cross_weight=float('nan')), dict(cross_weight=2)]:
+            options = {'threshold': None, **options}
+            with self.assertRaises(ValueError):
+                self.new(method='joint', **options)
+
+    def test_native_reuse_workflow_has_no_auxiliary_encoder_arguments(self):
+        self.new(method='reuse', threshold=None, joint_keep_k=5)
+        with patch.object(workflow, 'record_environment'), patch.object(workflow, 'timed_call') as call:
+            workflow.run(argparse.Namespace(name='trial', smoke=True, resume=False))
+        command = call.call_args.args[0]
+        self.assertEqual(command[command.index('--method')+1], 'reuse')
+        self.assertEqual(command[command.index('--joint_keep_k')+1], '5')
+        self.assertIn('--score_cache_dir', command)
+        self.assertNotIn('--sem_model', command)
+        self.assertNotIn('--cross_model', command)
+        self.assertNotIn('--sem_threshold', command)
+        self.assertNotIn('--cross_threshold', command)
+
+    def test_cache_can_be_enabled_without_changing_baseline_method(self):
+        self.new(method='baseline', score_cache='output/shared_scores')
+        with patch.object(workflow, 'record_environment'), patch.object(workflow, 'timed_call') as call:
+            workflow.run(argparse.Namespace(name='trial', smoke=True, resume=False))
+        command = call.call_args.args[0]
+        self.assertEqual(command[command.index('--method')+1], 'baseline')
+        self.assertIn('--score_cache_dir', command)
 
     def test_incomplete_evaluation_does_not_publish_metrics(self):
         path = self.complete()

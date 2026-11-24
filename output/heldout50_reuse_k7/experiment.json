@@ -1,0 +1,17 @@
+{
+  "method": "reuse",
+  "data_path": "output/heldout50/hotpot.json",
+  "kg_dir": "output/heldout50/kgs",
+  "model_name": "llama3:8b",
+  "embed_model_name": "mxbai-embed-large",
+  "reranker": "BAAI/bge-reranker-large",
+  "reranker_device": "cpu",
+  "sem_model": null,
+  "sem_threshold": null,
+  "cross_model": null,
+  "cross_threshold": null,
+  "joint_keep_k": 7,
+  "cross_weight": 0.7,
+  "score_cache_dir": "output/score_cache",
+  "top_k": 10
+}

@@ -5,8 +5,8 @@ held-out evaluation. Questions were sampled with seed 42 and prompt examples
 excluded; see `selection.json` for IDs and sampling settings.
 
 These saved results used the original pipeline, without SEM filtering. The runner
-now has an optional SEM stage; that does not change these historical results.
-Use the separate `output/sem50/README.md` instructions for the new experiment.
+now supports optional SEM/CROSS, joint, and native reuse methods; these do not
+change these historical results. See the shared workflow for new experiments.
 Do not overwrite this directory's configuration or predictions with SEM output.
 For new experiments, use [WORKFLOW.md](../../WORKFLOW.md). To recompute the
 comparison without running models: `./experiment compare baseline50 sem50 sem50_t03`.

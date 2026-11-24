@@ -1,0 +1,4997 @@
+{
+  "questions": 50,
+  "answer_changed": 23,
+  "evidence_changed": 48,
+  "reuse_lost_gold_fact_occurrences": 28,
+  "questions_with_reuse_gold_loss": 20,
+  "question_rows": [
+    {
+      "id": "5a79d2fe5542994f819ef0c3",
+      "question": "Who was born first, Aleksandr Ivanovsky or Arthur Lubin?",
+      "gold_answer": "Aleksandr Ivanovsky",
+      "baseline_answer": "Aleksandr Ivanovsky (1881).",
+      "reuse_answer": "Aleksandr Ivanovsky.",
+      "baseline_sp": [
+        [
+          "Aleksandr Ivanovsky",
+          0
+        ],
+        [
+          "Aleksandr Ivanovsky",
+          1
+        ],
+        [
+          "Aleksandr Ivanovsky",
+          2
+        ],
+        [
+          "Arthur Lubin",
+          0
+        ],
+        [
+          "Arthur Lubin",
+          1
+        ],
+        [
+          "A Successful Failure",
+          0
+        ],
+        [
+          "A Successful Failure",
+          1
+        ],
+        [
+          "The Decembrists (film)",
+          0
+        ],
+        [
+          "The Palace and the Fortress",
+          0
+        ],
+        [
+          "Silva (film)",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Aleksandr Ivanovsky",
+          0
+        ],
+        [
+          "Aleksandr Ivanovsky",
+          1
+        ],
+        [
+          "Aleksandr Ivanovsky",
+          2
+        ],
+        [
+          "Arthur Lubin",
+          0
+        ],
+        [
+          "Silva (film)",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Aleksandr Ivanovsky",
+          "sentence_index": 0,
+          "text": "Aleksandr Ivanovsky (1881\u20131968) was a Russian screenwriter and film director who worked during the Soviet era."
+        },
+        {
+          "title": "Arthur Lubin",
+          "sentence_index": 0,
+          "text": "Arthur Lubin (July 25, 1898 \u2013 May 12, 1995) was an American film director and producer who directed several \"Abbott & Costello\" films, \"Phantom of the Opera\" (1943), the \"Francis the Talking Mule\" series and created the talking-horse TV series \"Mister Ed\"."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a7905f555429974737f7947",
+      "question": "Is Driss Lachgar's birthplace the largest or the second largest city in Morocco?",
+      "gold_answer": "second largest",
+      "baseline_answer": "Second.",
+      "reuse_answer": "Second.",
+      "baseline_sp": [
+        [
+          "Driss Lachgar",
+          0
+        ],
+        [
+          "Driss Lachgar",
+          1
+        ],
+        [
+          "Rabat",
+          0
+        ],
+        [
+          "Casablanca",
+          0
+        ],
+        [
+          "Casablanca",
+          1
+        ],
+        [
+          "Tan-Tan",
+          2
+        ],
+        [
+          "Tan-Tan",
+          4
+        ],
+        [
+          "Oriental (1997\u20132015)",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Driss Lachgar",
+          0
+        ],
+        [
+          "Driss Lachgar",
+          1
+        ],
+        [
+          "Rabat",
+          0
+        ],
+        [
+          "Casablanca",
+          0
+        ],
+        [
+          "Casablanca",
+          1
+        ],
+        [
+          "Tan-Tan",
+          2
+        ],
+        [
+          "Tan-Tan",
+          4
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Driss Lachgar",
+          "sentence_index": 0,
+          "text": "Driss Lachgar (Arabic: \u0627\u062f\u0631\u064a\u0633 \u0644\u0634\u0763\u0631\u200e \u200e , born 1954, Rabat) is a Moroccan politician of the Socialist Union of Popular Forces (USFP) party."
+        },
+        {
+          "title": "Rabat",
+          "sentence_index": 0,
+          "text": "Rabat (Berber: , Arabic: \u0627\u0644\u0631\u0650\u0651\u0628\u064e\u0627\u0637\u200e \u200e , Moroccan Arabic: \u0631\u0651\u0628\u0627\u0637\u200e \u200e ) is the capital city of Morocco and its second largest city with an urban population of approximately 580,000 (2014) and a metropolitan population of over 1.2 million."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ae54b6355429908b63265cc",
+      "question": "Sporobolus and Zea are in the same what?",
+      "gold_answer": "family",
+      "baseline_answer": "Family",
+      "reuse_answer": "Family",
+      "baseline_sp": [
+        [
+          "Sporobolus",
+          0
+        ],
+        [
+          "Zea (plant)",
+          0
+        ],
+        [
+          "Zea (plant)",
+          1
+        ],
+        [
+          "Zea (plant)",
+          2
+        ],
+        [
+          "Zea perennis",
+          0
+        ],
+        [
+          "Zea perennis",
+          1
+        ],
+        [
+          "Sporobolus compositus",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Sporobolus",
+          0
+        ],
+        [
+          "Zea (plant)",
+          0
+        ],
+        [
+          "Zea (plant)",
+          1
+        ],
+        [
+          "Zea (plant)",
+          2
+        ],
+        [
+          "Zea perennis",
+          0
+        ],
+        [
+          "Zea perennis",
+          1
+        ],
+        [
+          "Sporobolus compositus",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Sporobolus",
+          "sentence_index": 0,
+          "text": "Sporobolus is a nearly cosmopolitan genus of plants in the grass family."
+        },
+        {
+          "title": "Zea (plant)",
+          "sentence_index": 0,
+          "text": "Zea is a genus of plants in the grass family."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": false,
+      "answer_changed": false
+    },
+    {
+      "id": "5ae69e6d5542996d980e7c62",
+      "question": "Which rock band based in Louisville, Kentucky released their second studio album in 2004?",
+      "gold_answer": "Flaw",
+      "baseline_answer": "Nephew.",
+      "reuse_answer": "Nephew.",
+      "baseline_sp": [
+        [
+          "Flaw (band)",
+          0
+        ],
+        [
+          "Flaw (band)",
+          1
+        ],
+        [
+          "Flaw (band)",
+          2
+        ],
+        [
+          "Flaw (band)",
+          3
+        ],
+        [
+          "Flaw (band)",
+          4
+        ],
+        [
+          "Nerves Junior",
+          0
+        ],
+        [
+          "Kentucky Blue Collar Band",
+          1
+        ],
+        [
+          "Kentucky Blue Collar Band",
+          2
+        ],
+        [
+          "Train discography",
+          1
+        ],
+        [
+          "Nephew discography",
+          7
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Flaw (band)",
+          0
+        ],
+        [
+          "Kentucky Blue Collar Band",
+          0
+        ],
+        [
+          "Kentucky Blue Collar Band",
+          2
+        ],
+        [
+          "Nerves Junior",
+          0
+        ],
+        [
+          "Nerves Junior",
+          1
+        ],
+        [
+          "Nerves Junior",
+          2
+        ],
+        [
+          "Nephew discography",
+          7
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Endangered Species (Flaw album)",
+          "sentence_index": 1,
+          "text": " It was released on May 4, 2004."
+        },
+        {
+          "title": "Flaw (band)",
+          "sentence_index": 0,
+          "text": "Flaw is an American rock band from Louisville, Kentucky."
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Endangered Species (Flaw album)",
+          "sentence_index": 1,
+          "text": " It was released on May 4, 2004."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a75176a5542993748c897b6",
+      "question": "Which 1994 British romantic comedy featured the song \"Love Is All Around\"?",
+      "gold_answer": "Four Weddings and a Funeral",
+      "baseline_answer": "Four Weddings and a Funeral.",
+      "reuse_answer": "Four Weddings and a Funeral.",
+      "baseline_sp": [
+        [
+          "Reg Presley",
+          0
+        ],
+        [
+          "Reg Presley",
+          1
+        ],
+        [
+          "Reg Presley",
+          2
+        ],
+        [
+          "Four Weddings and a Funeral",
+          0
+        ],
+        [
+          "Staggered (film)",
+          0
+        ],
+        [
+          "Staggered (film)",
+          1
+        ],
+        [
+          "Great Moments in Aviation",
+          0
+        ],
+        [
+          "James Fleet",
+          1
+        ],
+        [
+          "Captives",
+          0
+        ],
+        [
+          "It Happened One Sunday",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Reg Presley",
+          0
+        ],
+        [
+          "Reg Presley",
+          1
+        ],
+        [
+          "Reg Presley",
+          2
+        ],
+        [
+          "Four Weddings and a Funeral",
+          0
+        ],
+        [
+          "Staggered (film)",
+          0
+        ],
+        [
+          "Staggered (film)",
+          1
+        ],
+        [
+          "James Fleet",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Four Weddings and a Funeral",
+          "sentence_index": 0,
+          "text": "Four Weddings and a Funeral is a 1994 British romantic comedy film directed by Mike Newell."
+        },
+        {
+          "title": "Reg Presley",
+          "sentence_index": 2,
+          "text": " He wrote the song \"Love Is All Around\", which was featured in the films \"Four Weddings and a Funeral\" and \"Love Actually\"."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a8b7ca65542997f31a41d49",
+      "question": "When did the Romance languages of Slovenia evolver from Vulgar Latin?",
+      "gold_answer": "the sixth and ninth centuries",
+      "baseline_answer": "From Vulgar Latin during the Roman Empire.",
+      "reuse_answer": "A short and sweet answer!\n\nA: None, Romance languages of Slovenia evolved from Vulgar Latin.",
+      "baseline_sp": [
+        [
+          "Languages of Slovenia",
+          0
+        ],
+        [
+          "Languages of Slovenia",
+          1
+        ],
+        [
+          "Languages of Slovenia",
+          3
+        ],
+        [
+          "Languages of Slovenia",
+          4
+        ],
+        [
+          "Languages of Slovenia",
+          5
+        ],
+        [
+          "Eastern Romance languages",
+          0
+        ],
+        [
+          "Eastern Romance languages",
+          1
+        ],
+        [
+          "Vulgar Latin",
+          0
+        ],
+        [
+          "Vulgar Latin",
+          1
+        ],
+        [
+          "French language",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Languages of Slovenia",
+          0
+        ],
+        [
+          "Languages of Slovenia",
+          2
+        ],
+        [
+          "Languages of Slovenia",
+          3
+        ],
+        [
+          "Languages of Slovenia",
+          5
+        ],
+        [
+          "Languages of Slovenia",
+          6
+        ],
+        [
+          "Eastern Romance languages",
+          0
+        ],
+        [
+          "Vulgar Latin",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Languages of Slovenia",
+          "sentence_index": 0,
+          "text": "Slovenia has been a meeting area of the Slavic, Germanic, Romance, and Uralic linguistic and cultural regions, which makes it the most complex meeting point of languages in Europe."
+        },
+        {
+          "title": "Romance languages",
+          "sentence_index": 0,
+          "text": "The Romance languages (sometimes called the Romanic languages, Latin languages, or Neo-Latin languages) are the modern languages that evolved from Vulgar Latin between the sixth and ninth centuries and that thus form a branch of the Italic languages within the Indo-European language family."
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Romance languages",
+          "sentence_index": 0,
+          "text": "The Romance languages (sometimes called the Romanic languages, Latin languages, or Neo-Latin languages) are the modern languages that evolved from Vulgar Latin between the sixth and ninth centuries and that thus form a branch of the Italic languages within the Indo-European language family."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ae834e95542997ec272776a",
+      "question": "What song written by Jimmy Webb inspired the name of a supergroup including Johnny Cash?",
+      "gold_answer": "Highwayman",
+      "baseline_answer": "\"The Highwayman\".",
+      "reuse_answer": "\"The Highwayman\".",
+      "baseline_sp": [
+        [
+          "Highwayman (song)",
+          0
+        ],
+        [
+          "Highwayman (song)",
+          2
+        ],
+        [
+          "Highwayman (song)",
+          5
+        ],
+        [
+          "Highwayman (song)",
+          6
+        ],
+        [
+          "Highwayman (song)",
+          9
+        ],
+        [
+          "El Mirage (album)",
+          0
+        ],
+        [
+          "El Mirage (album)",
+          1
+        ],
+        [
+          "El Mirage (album)",
+          2
+        ],
+        [
+          "The Highwaymen (country supergroup)",
+          0
+        ],
+        [
+          "The Highwaymen (country supergroup)",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Highwayman (song)",
+          0
+        ],
+        [
+          "Highwayman (song)",
+          3
+        ],
+        [
+          "Highwayman (song)",
+          5
+        ],
+        [
+          "Highwayman (song)",
+          9
+        ],
+        [
+          "El Mirage (album)",
+          0
+        ],
+        [
+          "El Mirage (album)",
+          2
+        ],
+        [
+          "Kenneth Jones (songwriter)",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Highwayman (song)",
+          "sentence_index": 0,
+          "text": "\"Highwayman\" is a song written by American singer-songwriter Jimmy Webb, about a soul with incarnations in four different places in time and history: as a highwayman, a sailor, a construction worker on the Hoover Dam, and finally as a captain of a starship."
+        },
+        {
+          "title": "The Highwaymen (country supergroup)",
+          "sentence_index": 0,
+          "text": "The Highwaymen was a country music supergroup composed of four of the genre's biggest artists well known for their pioneering influence on the outlaw country subgenre: Johnny Cash, Waylon Jennings, Willie Nelson, and Kris Kristofferson."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "The Highwaymen (country supergroup)",
+          "sentence_index": 0,
+          "text": "The Highwaymen was a country music supergroup composed of four of the genre's biggest artists well known for their pioneering influence on the outlaw country subgenre: Johnny Cash, Waylon Jennings, Willie Nelson, and Kris Kristofferson."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a7ae2f2554299042af8f6aa",
+      "question": "Which sport has been played at the BayArena in Leverkusen, Germany, since 1958?",
+      "gold_answer": "football",
+      "baseline_answer": "Football.",
+      "reuse_answer": "Football.",
+      "baseline_sp": [
+        [
+          "BayArena",
+          0
+        ],
+        [
+          "2017\u201318 Bayer 04 Leverkusen season",
+          0
+        ],
+        [
+          "2017\u201318 Bayer 04 Leverkusen season",
+          1
+        ],
+        [
+          "2017\u201318 Bayer 04 Leverkusen season",
+          3
+        ],
+        [
+          "2017\u201318 Bayer 04 Leverkusen season",
+          4
+        ],
+        [
+          "Bayer 04 Leverkusen",
+          0
+        ],
+        [
+          "Bayer 04 Leverkusen",
+          1
+        ],
+        [
+          "Robin Dutt",
+          4
+        ],
+        [
+          "1993 DFB-Pokal Final",
+          1
+        ],
+        [
+          "1993 DFB-Pokal Final",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "BayArena",
+          0
+        ],
+        [
+          "2017\u201318 Bayer 04 Leverkusen season",
+          0
+        ],
+        [
+          "2017\u201318 Bayer 04 Leverkusen season",
+          3
+        ],
+        [
+          "Bayer 04 Leverkusen",
+          0
+        ],
+        [
+          "Bayer 04 Leverkusen",
+          1
+        ],
+        [
+          "Robin Dutt",
+          4
+        ],
+        [
+          "1993 DFB-Pokal Final",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "BayArena",
+          "sentence_index": 0,
+          "text": "BayArena (] ) is a football stadium in Leverkusen, North Rhine-Westphalia, Germany, which has been the home ground of Bundesliga club Bayer Leverkusen since 1958."
+        },
+        {
+          "title": "Bayer 04 Leverkusen",
+          "sentence_index": 0,
+          "text": "Bayer 04 Leverkusen Fu\u00dfball GmbH, also known as Bayer 04 Leverkusen ] , Bayer Leverkusen, Leverkusen or simply Bayer, is a German football club based in Leverkusen, North Rhine-Westphalia."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ae5d63b5542996de7b71a2d",
+      "question": "In what basketball position does the brother of Saulius Kuzminskas play?",
+      "gold_answer": "small forward",
+      "baseline_answer": "Small forward.",
+      "reuse_answer": "Small forward.",
+      "baseline_sp": [
+        [
+          "Saulius Kuzminskas",
+          0
+        ],
+        [
+          "Saulius Kuzminskas",
+          1
+        ],
+        [
+          "Mindaugas Kuzminskas",
+          0
+        ],
+        [
+          "Mindaugas Kuzminskas",
+          1
+        ],
+        [
+          "Mindaugas Kuzminskas",
+          2
+        ],
+        [
+          "Saulius \u0160tombergas",
+          0
+        ],
+        [
+          "Saulius \u0160tombergas",
+          1
+        ],
+        [
+          "Saulius \u0160tombergas",
+          2
+        ],
+        [
+          "Saulius \u0160tombergas",
+          3
+        ],
+        [
+          "Ram Kumar (basketball)",
+          4
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Saulius Kuzminskas",
+          0
+        ],
+        [
+          "Saulius Kuzminskas",
+          1
+        ],
+        [
+          "Mindaugas Kuzminskas",
+          0
+        ],
+        [
+          "Mindaugas Kuzminskas",
+          1
+        ],
+        [
+          "Mindaugas Kuzminskas",
+          2
+        ],
+        [
+          "Saulius \u0160tombergas",
+          0
+        ],
+        [
+          "Saulius \u0160tombergas",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Mindaugas Kuzminskas",
+          "sentence_index": 2,
+          "text": " Standing at 2.06 m , he plays at the small forward position."
+        },
+        {
+          "title": "Saulius Kuzminskas",
+          "sentence_index": 1,
+          "text": " His younger brother Mindaugas is also a basketball player for the New York Knicks."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5adee8ff55429975fa854fb8",
+      "question": "What dance competition television series features host and NFL reporter Erin Andrews?",
+      "gold_answer": "Dancing with the Stars",
+      "baseline_answer": "\"Dancing with the Stars\"",
+      "reuse_answer": "Dancing with the Stars.",
+      "baseline_sp": [
+        [
+          "Erin Andrews",
+          0
+        ],
+        [
+          "Erin Andrews",
+          1
+        ],
+        [
+          "Live to Dance",
+          0
+        ],
+        [
+          "Live to Dance",
+          2
+        ],
+        [
+          "Samantha Ponder",
+          1
+        ],
+        [
+          "Dancing with the Stars (U.S. TV series)",
+          1
+        ],
+        [
+          "Dancing with the Stars (U.S. TV series)",
+          3
+        ],
+        [
+          "Dancing with the Stars (U.S. TV series)",
+          4
+        ],
+        [
+          "Dancing on Ice around the world",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Erin Andrews",
+          0
+        ],
+        [
+          "Erin Andrews",
+          1
+        ],
+        [
+          "Live to Dance",
+          0
+        ],
+        [
+          "Live to Dance",
+          2
+        ],
+        [
+          "Dancing on Ice around the world",
+          0
+        ],
+        [
+          "Dancing with the Stars (U.S. TV series)",
+          1
+        ],
+        [
+          "Dancing with the Stars (U.S. TV series)",
+          4
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Dancing with the Stars (U.S. TV series)",
+          "sentence_index": 0,
+          "text": "Dancing with the Stars is an American dance competition television series that premiered on June 1, 2005, on ABC."
+        },
+        {
+          "title": "Erin Andrews",
+          "sentence_index": 1,
+          "text": " She hosts \"Dancing with the Stars\" for ABC and is a sideline reporter for Fox NFL."
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Dancing with the Stars (U.S. TV series)",
+          "sentence_index": 0,
+          "text": "Dancing with the Stars is an American dance competition television series that premiered on June 1, 2005, on ABC."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ac24ad7554299636651995a",
+      "question": "Which was Disney's 2nd animated production, Pinocchio or Home on the Range?",
+      "gold_answer": "Pinocchio",
+      "baseline_answer": "Pinocchio.",
+      "reuse_answer": "Pinocchio.",
+      "baseline_sp": [
+        [
+          "Home on the Range (2004 film)",
+          0
+        ],
+        [
+          "Home on the Range (2004 film)",
+          1
+        ],
+        [
+          "Home on the Range (2004 film)",
+          2
+        ],
+        [
+          "Home on the Range (2004 film)",
+          4
+        ],
+        [
+          "Home on the Range (2004 film)",
+          5
+        ],
+        [
+          "Pinocchio (1940 film)",
+          0
+        ],
+        [
+          "Pinocchio (1940 film)",
+          1
+        ],
+        [
+          "Frankie Darro",
+          3
+        ],
+        [
+          "Pinocchio (1957 TV-musical)",
+          0
+        ],
+        [
+          "Pinocchio (1957 TV-musical)",
+          4
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Home on the Range (2004 film)",
+          0
+        ],
+        [
+          "Home on the Range (2004 film)",
+          1
+        ],
+        [
+          "Home on the Range (2004 film)",
+          3
+        ],
+        [
+          "Home on the Range (2004 film)",
+          5
+        ],
+        [
+          "Pinocchio (1940 film)",
+          0
+        ],
+        [
+          "Pinocchio (1940 film)",
+          1
+        ],
+        [
+          "Pinocchio (1957 TV-musical)",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Home on the Range (2004 film)",
+          "sentence_index": 0,
+          "text": "Home on the Range is a 2004 American animated musical western comedy film produced by Walt Disney Feature Animation and released by Walt Disney Pictures."
+        },
+        {
+          "title": "Pinocchio (1940 film)",
+          "sentence_index": 0,
+          "text": "Pinocchio is a 1940 American animated musical fantasy film produced by Walt Disney Productions and based on the Italian children's novel \"The Adventures of Pinocchio\" by Carlo Collodi."
+        },
+        {
+          "title": "Pinocchio (1940 film)",
+          "sentence_index": 1,
+          "text": " It was the second animated feature film produced by Disney, made after the success of \"Snow White and the Seven Dwarfs\" (1937)."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 3,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5adf33b35542993a75d26420",
+      "question": "Which university did the singer of \"Long Time Gone\" study?",
+      "gold_answer": "Tufts University",
+      "baseline_answer": "Tufts.",
+      "reuse_answer": "Tufts.",
+      "baseline_sp": [
+        [
+          "Long Time Gone",
+          0
+        ],
+        [
+          "Long Time Gone Tour",
+          0
+        ],
+        [
+          "Brother Jukebox",
+          4
+        ],
+        [
+          "Darrell Scott",
+          4
+        ],
+        [
+          "Highway Call",
+          3
+        ],
+        [
+          "Summer Time Gone",
+          0
+        ],
+        [
+          "Foreplay/Long Time",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Long Time Gone",
+          0
+        ],
+        [
+          "Long Time Gone Tour",
+          0
+        ],
+        [
+          "Brother Jukebox",
+          4
+        ],
+        [
+          "Darrell Scott",
+          4
+        ],
+        [
+          "Highway Call",
+          3
+        ],
+        [
+          "Summer Time Gone",
+          0
+        ],
+        [
+          "Foreplay/Long Time",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Darrell Scott",
+          "sentence_index": 4,
+          "text": " He attended Tufts University, where he studied poetry and literature."
+        },
+        {
+          "title": "Long Time Gone",
+          "sentence_index": 0,
+          "text": "\"Long Time Gone\" is a country song by Darrell Scott, originally recorded by him on his 2000 album \"Real Time\" which Scott recorded together with Tim O'Brien."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": false,
+      "answer_changed": false
+    },
+    {
+      "id": "5ae199305542997b2ef7d20e",
+      "question": "In what european city is a location of the college from which the woman known as Comic Book Girl 19 received her degree?",
+      "gold_answer": "Lacoste, France",
+      "baseline_answer": "Lacoste.",
+      "reuse_answer": "Lacoste, France.",
+      "baseline_sp": [
+        [
+          "Comic Book Girl 19",
+          0
+        ],
+        [
+          "Comic Book Girl 19",
+          1
+        ],
+        [
+          "Savannah College of Art and Design",
+          0
+        ],
+        [
+          "Comic book convention",
+          0
+        ],
+        [
+          "Comic book convention",
+          1
+        ],
+        [
+          "Comic book convention",
+          3
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          0
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          1
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          2
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          4
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Comic Book Girl 19",
+          0
+        ],
+        [
+          "Comic Book Girl 19",
+          1
+        ],
+        [
+          "Savannah College of Art and Design",
+          0
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          0
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          1
+        ],
+        [
+          "Sheena, Queen of the Jungle",
+          4
+        ],
+        [
+          "Comic book convention",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Comic Book Girl 19",
+          "sentence_index": 0,
+          "text": "Danika Lee Massey, also known as Comic Book Girl 19 or CBG19, is a YouTube personality known for her commentaries on comics, films, books, and television shows."
+        },
+        {
+          "title": "Comic Book Girl 19",
+          "sentence_index": 1,
+          "text": " She has a degree in sequential art from the Savannah College of Art and Design."
+        },
+        {
+          "title": "Savannah College of Art and Design",
+          "sentence_index": 0,
+          "text": "Savannah College of Art and Design (SCAD), is a private, nonprofit, accredited university with locations in Savannah, Georgia; Atlanta, Georgia; Hong Kong; and Lacoste, France."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 3,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ae5e852554299546bf82fb8",
+      "question": "Goldilocks and the Three Bares was a film that was totally separate from the fairy tale from what century?",
+      "gold_answer": "19th-century",
+      "baseline_answer": "19th",
+      "reuse_answer": "19th",
+      "baseline_sp": [
+        [
+          "Goldilocks and the Three Bears",
+          0
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          1
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          2
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          3
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          4
+        ],
+        [
+          "Goldilocks and the Three Bares",
+          0
+        ],
+        [
+          "Goldilocks and the Three Bares",
+          1
+        ],
+        [
+          "Goldilocks and the Three Bares",
+          2
+        ],
+        [
+          "Goldilocks (disambiguation)",
+          0
+        ],
+        [
+          "Joseph Jacobs",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Goldilocks and the Three Bears",
+          0
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          1
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          2
+        ],
+        [
+          "Goldilocks and the Three Bears",
+          3
+        ],
+        [
+          "Goldilocks and the Three Bares",
+          0
+        ],
+        [
+          "Goldilocks and the Three Bares",
+          1
+        ],
+        [
+          "Goldilocks and the Three Bares",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Goldilocks and the Three Bares",
+          "sentence_index": 1,
+          "text": " The title has absolutely nothing to do with the famous fable which inspired the title."
+        },
+        {
+          "title": "Goldilocks and the Three Bears",
+          "sentence_index": 0,
+          "text": "\"Goldilocks and the Three Bears\" and the older still \"The Story of the Three Bears\" are two variations of a 19th-century fairy tale."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a8abcab5542996c9b8d5f67",
+      "question": "Which was the last of four Alien films to feature Sigourney Weaver?",
+      "gold_answer": "Alien Resurrection",
+      "baseline_answer": "A: Alien Resurrection",
+      "reuse_answer": "A: Alien Resurrection (1997)",
+      "baseline_sp": [
+        [
+          "Sigourney Weaver",
+          1
+        ],
+        [
+          "Sigourney Weaver",
+          2
+        ],
+        [
+          "Sigourney Weaver",
+          3
+        ],
+        [
+          "Alien (film)",
+          0
+        ],
+        [
+          "Alien (franchise)",
+          0
+        ],
+        [
+          "Aliens (film)",
+          0
+        ],
+        [
+          "Aliens (film)",
+          2
+        ],
+        [
+          "Alien Resurrection",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Sigourney Weaver",
+          1
+        ],
+        [
+          "Sigourney Weaver",
+          2
+        ],
+        [
+          "Sigourney Weaver",
+          3
+        ],
+        [
+          "Alien (film)",
+          0
+        ],
+        [
+          "Alien (franchise)",
+          0
+        ],
+        [
+          "Aliens (film)",
+          0
+        ],
+        [
+          "Aliens (film)",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Alien Resurrection",
+          "sentence_index": 1,
+          "text": " It is the fourth installment in the \"Alien\" film series, and the final installment in the original series."
+        },
+        {
+          "title": "Sigourney Weaver",
+          "sentence_index": 1,
+          "text": " Following her film debut as a minor character in \"Annie Hall\" (1977), she quickly came to prominence with her first lead role as Ellen Ripley in \"Alien\" (1979)."
+        },
+        {
+          "title": "Sigourney Weaver",
+          "sentence_index": 2,
+          "text": " She reprised the role in three sequels: \"Aliens\" (1986), for which she was nominated for the Academy Award for Best Actress; \"Alien 3\" (1992), and \"Alien Resurrection\" (1997)."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Alien Resurrection",
+          "sentence_index": 1,
+          "text": " It is the fourth installment in the \"Alien\" film series, and the final installment in the original series."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ae721c15542996d980e7cbc",
+      "question": "Ra\u00fal Arellano played for Mexico in which football tournament in 1954?",
+      "gold_answer": "FIFA World Cup",
+      "baseline_answer": "1954 FIFA World Cup.",
+      "reuse_answer": "1954 FIFA World Cup.",
+      "baseline_sp": [
+        [
+          "Ra\u00fal Arellano",
+          1
+        ],
+        [
+          "1954 FIFA World Cup",
+          0
+        ],
+        [
+          "1954 FIFA World Cup",
+          1
+        ],
+        [
+          "1954 FIFA World Cup",
+          2
+        ],
+        [
+          "1954 FIFA World Cup",
+          3
+        ],
+        [
+          "1954\u201355 British Home Championship",
+          0
+        ],
+        [
+          "1954\u201355 British Home Championship",
+          1
+        ],
+        [
+          "1954\u201355 British Home Championship",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Ra\u00fal Arellano",
+          1
+        ],
+        [
+          "1954 FIFA World Cup",
+          0
+        ],
+        [
+          "1954 FIFA World Cup",
+          1
+        ],
+        [
+          "1954 FIFA World Cup",
+          2
+        ],
+        [
+          "1954 FIFA World Cup",
+          3
+        ],
+        [
+          "1954\u201355 British Home Championship",
+          0
+        ],
+        [
+          "1954\u201355 British Home Championship",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "1954 FIFA World Cup",
+          "sentence_index": 0,
+          "text": "The 1954 FIFA World Cup, the fifth staging of the FIFA World Cup, was held in Switzerland from 16 June to 4 July."
+        },
+        {
+          "title": "Ra\u00fal Arellano",
+          "sentence_index": 0,
+          "text": "Ra\u00fal Arellano Villegas (28 February 1935 \u2013 12 October 1997) was a Mexican football forward who played for Mexico in the 1954 FIFA World Cup."
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Ra\u00fal Arellano",
+          "sentence_index": 0,
+          "text": "Ra\u00fal Arellano Villegas (28 February 1935 \u2013 12 October 1997) was a Mexican football forward who played for Mexico in the 1954 FIFA World Cup."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a8778d25542994846c1cd89",
+      "question": "Has Stefan Edberg won more events than  \u00c9douard Roger-Vasselin?",
+      "gold_answer": "yes",
+      "baseline_answer": "Yes.",
+      "reuse_answer": "Yes.",
+      "baseline_sp": [
+        [
+          "Stefan Edberg",
+          0
+        ],
+        [
+          "Stefan Edberg",
+          1
+        ],
+        [
+          "Stefan Edberg",
+          2
+        ],
+        [
+          "Stefan Edberg",
+          3
+        ],
+        [
+          "Stefan Edberg",
+          4
+        ],
+        [
+          "Becker\u2013Edberg rivalry",
+          0
+        ],
+        [
+          "\u00c9douard Roger-Vasselin",
+          0
+        ],
+        [
+          "\u00c9douard Roger-Vasselin",
+          1
+        ],
+        [
+          "\u00c9douard Roger-Vasselin",
+          2
+        ],
+        [
+          "Edberg\u2013Lendl rivalry",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Stefan Edberg",
+          0
+        ],
+        [
+          "Stefan Edberg",
+          1
+        ],
+        [
+          "Stefan Edberg",
+          3
+        ],
+        [
+          "Becker\u2013Edberg rivalry",
+          0
+        ],
+        [
+          "\u00c9douard Roger-Vasselin",
+          0
+        ],
+        [
+          "\u00c9douard Roger-Vasselin",
+          1
+        ],
+        [
+          "\u00c9douard Roger-Vasselin",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Stefan Edberg",
+          "sentence_index": 0,
+          "text": "Stefan Bengt Edberg (] ; born 19 January 1966) is a Swedish former world no. 1 professional tennis player (in both singles and doubles)."
+        },
+        {
+          "title": "Stefan Edberg",
+          "sentence_index": 1,
+          "text": " A major proponent of the serve-and-volley style of tennis, he won six Grand Slam singles titles and three Grand Slam men's doubles titles between 1985 and 1996."
+        },
+        {
+          "title": "Stefan Edberg",
+          "sentence_index": 2,
+          "text": " He also won the Masters Grand Prix and was a part of the Swedish Davis Cup-winning-team four times."
+        },
+        {
+          "title": "Stefan Edberg",
+          "sentence_index": 3,
+          "text": " In addition he won four Masters Series titles, four Championship Series titles and the unofficial Olympic tournament 1984, was ranked in the singles top 10 for ten successive years, 9 years in the top 5, and is considered one of the greatest players of his era."
+        },
+        {
+          "title": "\u00c9douard Roger-Vasselin",
+          "sentence_index": 1,
+          "text": " He won the men's doubles title at Roland Garros in 2014, partnering Julien Benneteau."
+        }
+      ],
+      "baseline_retrieved_gold": 5,
+      "reuse_retrieved_gold": 4,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Stefan Edberg",
+          "sentence_index": 2,
+          "text": " He also won the Masters Grand Prix and was a part of the Swedish Davis Cup-winning-team four times."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ab9e477554299232ef4a25d",
+      "question": "Which was built first Woolworth Building or 1 New York Plaza?",
+      "gold_answer": "Woolworth Building",
+      "baseline_answer": "1910.",
+      "reuse_answer": "1910.",
+      "baseline_sp": [
+        [
+          "Woolworth Building",
+          0
+        ],
+        [
+          "Woolworth Building",
+          1
+        ],
+        [
+          "Woolworth Building",
+          2
+        ],
+        [
+          "Woolworth Building",
+          3
+        ],
+        [
+          "Woolworth Building",
+          4
+        ],
+        [
+          "1 New York Plaza",
+          0
+        ],
+        [
+          "1 New York Plaza",
+          1
+        ],
+        [
+          "F. W. Woolworth Building (Watertown, New York)",
+          0
+        ],
+        [
+          "F. W. Woolworth Building (Watertown, New York)",
+          1
+        ],
+        [
+          "F. W. Woolworth Building (Watertown, New York)",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Woolworth Building",
+          0
+        ],
+        [
+          "Woolworth Building",
+          1
+        ],
+        [
+          "Woolworth Building",
+          3
+        ],
+        [
+          "Woolworth Building",
+          4
+        ],
+        [
+          "1 New York Plaza",
+          0
+        ],
+        [
+          "1 New York Plaza",
+          1
+        ],
+        [
+          "F. W. Woolworth Building (Watertown, New York)",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "1 New York Plaza",
+          "sentence_index": 0,
+          "text": "1 New York Plaza is an office building in New York City's Financial District, built in 1969 at the intersection of South and Whitehall Streets."
+        },
+        {
+          "title": "Woolworth Building",
+          "sentence_index": 0,
+          "text": "The Woolworth Building, at 233 Broadway, Manhattan, New York City, designed by architect Cass Gilbert and constructed between 1910 and 1912, is an early US skyscraper."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ab2958a554299449642c911",
+      "question": "3:10 to Yuma starred what American actor also known for his role as Hoban Washburne?",
+      "gold_answer": "Alan Tudyk",
+      "baseline_answer": "Alan Tudyk",
+      "reuse_answer": "Christian Bale.",
+      "baseline_sp": [
+        [
+          "3:10 to Yuma (2007 film)",
+          0
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          1
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          2
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          3
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          4
+        ],
+        [
+          "Alan Tudyk",
+          0
+        ],
+        [
+          "Alan Tudyk",
+          1
+        ],
+        [
+          "Alan Tudyk",
+          2
+        ],
+        [
+          "Alan Tudyk",
+          3
+        ],
+        [
+          "Terry Ray (actor)",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "3:10 to Yuma (2007 film)",
+          0
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          1
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          2
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          3
+        ],
+        [
+          "3:10 to Yuma (2007 film)",
+          4
+        ],
+        [
+          "Alan Tudyk",
+          0
+        ],
+        [
+          "Alan Tudyk",
+          3
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "3:10 to Yuma (2007 film)",
+          "sentence_index": 0,
+          "text": "3:10 to Yuma is a 2007 American Western film directed by James Mangold and produced by Cathy Konrad, and starring Russell Crowe and Christian Bale in the lead roles, with supporting performances by Peter Fonda, Gretchen Mol, Ben Foster, Dallas Roberts, Alan Tudyk, Vinessa Shaw, and Logan Lerman."
+        },
+        {
+          "title": "Alan Tudyk",
+          "sentence_index": 0,
+          "text": "Alan Wray Tudyk ( ; born March 16, 1971) is an American actor and voice actor known for his roles as Hoban \"Wash\" Washburne in the space western television series \"Firefly\" and movie \"Serenity\", Alpha in the science fiction TV series \"Dollhouse\", Tucker McGee in \"Tucker & Dale vs. Evil\", Steve the Pirate in \"\", and Wat in \"A Knight's Tale\"."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ab7fd6b5542990e739ec7b5",
+      "question": "What city has had an NFL football team with the same name as a Los Angeles NFL team?",
+      "gold_answer": "St. Louis",
+      "baseline_answer": "St. Louis.",
+      "reuse_answer": "San Diego.",
+      "baseline_sp": [
+        [
+          "Los Angeles Chargers",
+          0
+        ],
+        [
+          "Los Angeles Chargers",
+          1
+        ],
+        [
+          "Los Angeles Chargers",
+          2
+        ],
+        [
+          "Los Angeles Chargers",
+          3
+        ],
+        [
+          "Los Angeles Chargers",
+          4
+        ],
+        [
+          "Los Angeles Chargers",
+          5
+        ],
+        [
+          "Los Angeles Chargers retired numbers",
+          0
+        ],
+        [
+          "History of the Cleveland Rams",
+          4
+        ],
+        [
+          "List of Los Angeles Rams first-round draft picks",
+          0
+        ],
+        [
+          "Oakland Raiders relocation to Las Vegas",
+          3
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Los Angeles Chargers",
+          0
+        ],
+        [
+          "Los Angeles Chargers",
+          2
+        ],
+        [
+          "Los Angeles Chargers",
+          5
+        ],
+        [
+          "Los Angeles Chargers retired numbers",
+          0
+        ],
+        [
+          "History of the Cleveland Rams",
+          3
+        ],
+        [
+          "History of the Cleveland Rams",
+          4
+        ],
+        [
+          "Oakland Raiders relocation to Las Vegas",
+          3
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Paul Boudreau",
+          "sentence_index": 0,
+          "text": "Paul T. Boudreau (born December 30, 1949) is an American football coach who last served as offensive line coach for the Los Angeles Rams of the National Football League (NFL)."
+        },
+        {
+          "title": "Steven Jackson",
+          "sentence_index": 1,
+          "text": " He played college football for Oregon State and was drafted by the St. Louis Rams 24th overall in the 2004 NFL Draft."
+        }
+      ],
+      "baseline_retrieved_gold": 0,
+      "reuse_retrieved_gold": 0,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Paul Boudreau",
+          "sentence_index": 0,
+          "text": "Paul T. Boudreau (born December 30, 1949) is an American football coach who last served as offensive line coach for the Los Angeles Rams of the National Football League (NFL)."
+        },
+        {
+          "title": "Steven Jackson",
+          "sentence_index": 1,
+          "text": " He played college football for Oregon State and was drafted by the St. Louis Rams 24th overall in the 2004 NFL Draft."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ae524415542992663a4f121",
+      "question": "In what city did the 23rd overall pick of the 2015 NHL Entry Draft helped the United States national junior team win a bronze medal?",
+      "gold_answer": "Helsinki, Finland",
+      "baseline_answer": "Vancouver",
+      "reuse_answer": "Buffalo.",
+      "baseline_sp": [
+        [
+          "Brock Boeser",
+          0
+        ],
+        [
+          "Brock Boeser",
+          1
+        ],
+        [
+          "Brock Boeser",
+          2
+        ],
+        [
+          "Brock Boeser",
+          3
+        ],
+        [
+          "Paul Bittner",
+          3
+        ],
+        [
+          "Ryan Johansen",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Brock Boeser",
+          0
+        ],
+        [
+          "Brock Boeser",
+          1
+        ],
+        [
+          "Brock Boeser",
+          2
+        ],
+        [
+          "Brock Boeser",
+          3
+        ],
+        [
+          "Oscar Dansk",
+          0
+        ],
+        [
+          "Paul Bittner",
+          3
+        ],
+        [
+          "Ryan Johansen",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "2016 World Junior Ice Hockey Championships",
+          "sentence_index": 0,
+          "text": "The 2016 IIHF World Junior Championship was the 40th World Junior Ice Hockey Championship."
+        },
+        {
+          "title": "2016 World Junior Ice Hockey Championships",
+          "sentence_index": 1,
+          "text": " It was hosted in Helsinki, Finland."
+        },
+        {
+          "title": "Brock Boeser",
+          "sentence_index": 1,
+          "text": " A top prospect with the Waterloo Black Hawks of the United States Hockey League (USHL), Boeser was selected 23rd overall in the 2015 NHL Entry Draft by the Canucks, and spent the following two seasons with the University of North Dakota."
+        },
+        {
+          "title": "Brock Boeser",
+          "sentence_index": 3,
+          "text": " Internationally Boeser has played for the United States national junior team at the 2016 World Junior Championships, where he helped the team win a bronze medal."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "2016 World Junior Ice Hockey Championships",
+          "sentence_index": 0,
+          "text": "The 2016 IIHF World Junior Championship was the 40th World Junior Ice Hockey Championship."
+        },
+        {
+          "title": "2016 World Junior Ice Hockey Championships",
+          "sentence_index": 1,
+          "text": " It was hosted in Helsinki, Finland."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a890b895542995153361278",
+      "question": "The first person to reach both poles named a glacier after which person? ",
+      "gold_answer": "the daughter of Fridtjof Nansen.",
+      "baseline_answer": "Fridtjof Nansen.",
+      "reuse_answer": "Liv",
+      "baseline_sp": [
+        [
+          "Roald Amundsen",
+          0
+        ],
+        [
+          "Roald Amundsen",
+          1
+        ],
+        [
+          "Roald Amundsen",
+          2
+        ],
+        [
+          "Roald Amundsen",
+          3
+        ],
+        [
+          "Oscar Wisting",
+          0
+        ],
+        [
+          "Oscar Wisting",
+          1
+        ],
+        [
+          "Liv Glacier",
+          1
+        ],
+        [
+          "Liv Glacier",
+          2
+        ],
+        [
+          "Patrick Sweeney (entrepreneur)",
+          2
+        ],
+        [
+          "J. Val Klump",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Roald Amundsen",
+          0
+        ],
+        [
+          "Roald Amundsen",
+          1
+        ],
+        [
+          "Roald Amundsen",
+          2
+        ],
+        [
+          "Roald Amundsen",
+          3
+        ],
+        [
+          "Oscar Wisting",
+          0
+        ],
+        [
+          "Oscar Wisting",
+          1
+        ],
+        [
+          "Liv Glacier",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Liv Glacier",
+          "sentence_index": 1,
+          "text": " It was discovered in 1911 by Roald Amundsen, who named it for the daughter of Fridtjof Nansen."
+        },
+        {
+          "title": "Roald Amundsen",
+          "sentence_index": 2,
+          "text": " In 1926, he was the first expedition leader for the air expedition to the North Pole, making him the first person, without dispute, to reach both poles."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5add00805542992c1e3a2504",
+      "question": "Beyond the Edge was a docudrama about the mountaineer that was part of the Everest expedition led by whom?",
+      "gold_answer": "John Hunt",
+      "baseline_answer": "John Hunt.",
+      "reuse_answer": "Q: Beyond the Edge was a docudrama about the mountaineer that was part of the Everest expedition led by whom?\n\nA: John Hunt.",
+      "baseline_sp": [
+        [
+          "Beyond the Edge",
+          0
+        ],
+        [
+          "Beyond the Edge",
+          1
+        ],
+        [
+          "Beyond the Edge",
+          2
+        ],
+        [
+          "Rob Hall",
+          0
+        ],
+        [
+          "Rob Hall",
+          1
+        ],
+        [
+          "Apa Sherpa",
+          0
+        ],
+        [
+          "Lute Jerstad",
+          0
+        ],
+        [
+          "Lute Jerstad",
+          1
+        ],
+        [
+          "1924 British Mount Everest expedition",
+          1
+        ],
+        [
+          "Mallory and Irvine Research Expedition",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Beyond the Edge",
+          0
+        ],
+        [
+          "Beyond the Edge",
+          1
+        ],
+        [
+          "Beyond the Edge",
+          2
+        ],
+        [
+          "Rob Hall",
+          0
+        ],
+        [
+          "Rob Hall",
+          1
+        ],
+        [
+          "Apa Sherpa",
+          0
+        ],
+        [
+          "Mallory and Irvine Research Expedition",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Beyond the Edge",
+          "sentence_index": 0,
+          "text": "Beyond the Edge is a 2013 New Zealand 3D docudrama about Tenzing Norgay and Sir Edmund Hillary's historical ascent of Mount Everest in 1953."
+        },
+        {
+          "title": "Edmund Hillary",
+          "sentence_index": 2,
+          "text": " They were part of the ninth British expedition to Everest, led by John Hunt. \""
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Edmund Hillary",
+          "sentence_index": 2,
+          "text": " They were part of the ninth British expedition to Everest, led by John Hunt. \""
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ac3e68b5542997ea680c98b",
+      "question": "What do Susan Stafford and Vanna White have in common?",
+      "gold_answer": "\"Wheel of Fortune\"",
+      "baseline_answer": "They both hosted \"Wheel of Fortune\" at some point.",
+      "reuse_answer": "They both hosted \"Wheel of Fortune\".",
+      "baseline_sp": [
+        [
+          "Susan Stafford",
+          0
+        ],
+        [
+          "Susan Stafford",
+          1
+        ],
+        [
+          "Susan Stafford",
+          2
+        ],
+        [
+          "Vanna White",
+          0
+        ],
+        [
+          "Goddess of Love (film)",
+          2
+        ],
+        [
+          "White Bear and Red Moon",
+          0
+        ],
+        [
+          "White Bear and Red Moon",
+          1
+        ],
+        [
+          "Tom Stafford (astronomer)",
+          0
+        ],
+        [
+          "Tom Stafford (astronomer)",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Susan Stafford",
+          0
+        ],
+        [
+          "Susan Stafford",
+          1
+        ],
+        [
+          "Susan Stafford",
+          2
+        ],
+        [
+          "Vanna White",
+          0
+        ],
+        [
+          "Goddess of Love (film)",
+          2
+        ],
+        [
+          "Tom Stafford (astronomer)",
+          1
+        ],
+        [
+          "White Bear and Red Moon",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Susan Stafford",
+          "sentence_index": 1,
+          "text": " She was the original hostess of the American game show \"Wheel of Fortune\" from January 6, 1975 until she left on October 22, 1982."
+        },
+        {
+          "title": "Vanna White",
+          "sentence_index": 0,
+          "text": "Vanna White (born Vanna Marie Rosich; February 18, 1957) is an American television personality and film actress best known as the hostess of \"Wheel of Fortune\" since 1982."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a7438ec55429979e28828b8",
+      "question": "W. Tresper Clarke High School is in what county?",
+      "gold_answer": "Nassau County",
+      "baseline_answer": "Nassau.",
+      "reuse_answer": "Nassau County.",
+      "baseline_sp": [
+        [
+          "W. Tresper Clarke High School",
+          1
+        ],
+        [
+          "W. Tresper Clarke High School",
+          2
+        ],
+        [
+          "W. Tresper Clarke High School",
+          3
+        ],
+        [
+          "Clarke Central High School",
+          0
+        ],
+        [
+          "Clarke Central High School",
+          1
+        ],
+        [
+          "Clarke Central High School",
+          2
+        ],
+        [
+          "Cedar Shoals High School",
+          0
+        ],
+        [
+          "Bogart, Georgia",
+          0
+        ],
+        [
+          "Washington and Lee High School",
+          1
+        ],
+        [
+          "Freedom High School (Woodbridge, Virginia)",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "W. Tresper Clarke High School",
+          1
+        ],
+        [
+          "W. Tresper Clarke High School",
+          2
+        ],
+        [
+          "W. Tresper Clarke High School",
+          3
+        ],
+        [
+          "Clarke Central High School",
+          0
+        ],
+        [
+          "Clarke Central High School",
+          1
+        ],
+        [
+          "Cedar Shoals High School",
+          0
+        ],
+        [
+          "Bogart, Georgia",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Salisbury, Nassau County, New York",
+          "sentence_index": 0,
+          "text": "Salisbury is a hamlet and census-designated place (CDP) in Nassau County, New York, United States."
+        },
+        {
+          "title": "W. Tresper Clarke High School",
+          "sentence_index": 0,
+          "text": "W. Tresper Clarke High School is a high school in Westbury (technically in Salisbury) New York, United States."
+        }
+      ],
+      "baseline_retrieved_gold": 0,
+      "reuse_retrieved_gold": 0,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Salisbury, Nassau County, New York",
+          "sentence_index": 0,
+          "text": "Salisbury is a hamlet and census-designated place (CDP) in Nassau County, New York, United States."
+        },
+        {
+          "title": "W. Tresper Clarke High School",
+          "sentence_index": 0,
+          "text": "W. Tresper Clarke High School is a high school in Westbury (technically in Salisbury) New York, United States."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a77e9c055429949eeb29fa6",
+      "question": "Which British-Mauritian model starred alongside Raj Babbar and Mahesh Manjrekar in a 2011 Indian romantic comedy film?",
+      "gold_answer": "Bodyguard",
+      "baseline_answer": "Hazel Keech.",
+      "reuse_answer": "Hazel Keech.",
+      "baseline_sp": [
+        [
+          "Ready (2011 film)",
+          0
+        ],
+        [
+          "Ready (2011 film)",
+          1
+        ],
+        [
+          "Ready (2011 film)",
+          2
+        ],
+        [
+          "Ready (2011 film)",
+          7
+        ],
+        [
+          "Bodyguard (2011 Hindi film)",
+          0
+        ],
+        [
+          "Bodyguard (2011 Hindi film)",
+          1
+        ],
+        [
+          "Bodyguard (2011 Hindi film)",
+          3
+        ],
+        [
+          "Bodyguard (2011 Hindi film)",
+          5
+        ],
+        [
+          "Hazel Keech",
+          0
+        ],
+        [
+          "Hazel Keech",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Ready (2011 film)",
+          1
+        ],
+        [
+          "Ready (2011 film)",
+          2
+        ],
+        [
+          "Ready (2011 film)",
+          4
+        ],
+        [
+          "Ready (2011 film)",
+          6
+        ],
+        [
+          "Hazel Keech",
+          0
+        ],
+        [
+          "Hazel Keech",
+          1
+        ],
+        [
+          "Hazel Keech",
+          3
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Bodyguard (2011 Hindi film)",
+          "sentence_index": 3,
+          "text": " It also stars Raj Babbar, Mahesh Manjrekar and Hazel Keech in supporting roles."
+        },
+        {
+          "title": "Hazel Keech",
+          "sentence_index": 0,
+          "text": "Hazel Keech (born 28 February 1987) is a British\u2212Mauritian model who has appeared in Indian television programs and films."
+        },
+        {
+          "title": "Hazel Keech",
+          "sentence_index": 1,
+          "text": " She has appeared in \"Billa\" and \"Bodyguard\" as well as in a Suzuki advertisement."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Bodyguard (2011 Hindi film)",
+          "sentence_index": 3,
+          "text": " It also stars Raj Babbar, Mahesh Manjrekar and Hazel Keech in supporting roles."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5add56a85542992200553abe",
+      "question": "Which New South Wales town is larger, Port Macquarie or Bonny Hills?",
+      "gold_answer": "Port Macquarie",
+      "baseline_answer": "Port Macquarie.",
+      "reuse_answer": "Port Macquarie.",
+      "baseline_sp": [
+        [
+          "Bonny Hills, New South Wales",
+          0
+        ],
+        [
+          "Bonny Hills, New South Wales",
+          1
+        ],
+        [
+          "Port Macquarie",
+          0
+        ],
+        [
+          "Port Macquarie",
+          1
+        ],
+        [
+          "Port Macquarie",
+          2
+        ],
+        [
+          "Port Macquarie",
+          3
+        ],
+        [
+          "Port Macquarie Airport",
+          0
+        ],
+        [
+          "Port Macquarie Airport",
+          1
+        ],
+        [
+          "Port Macquarie Airport",
+          3
+        ],
+        [
+          "Leslie Williams (politician)",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Port Macquarie",
+          0
+        ],
+        [
+          "Port Macquarie",
+          1
+        ],
+        [
+          "Port Macquarie",
+          2
+        ],
+        [
+          "Port Macquarie",
+          3
+        ],
+        [
+          "Port Macquarie Airport",
+          0
+        ],
+        [
+          "Port Macquarie Airport",
+          3
+        ],
+        [
+          "Port Macquarie-Hastings Council dismissal, 2008",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Bonny Hills, New South Wales",
+          "sentence_index": 0,
+          "text": "Bonny Hills is a town in New South Wales, Australia about 30 minutes drive south of Port Macquarie."
+        },
+        {
+          "title": "Bonny Hills, New South Wales",
+          "sentence_index": 1,
+          "text": " As of the 2011 census, it had a population of 2,870 people."
+        },
+        {
+          "title": "Port Macquarie",
+          "sentence_index": 0,
+          "text": "Port Macquarie is a coastal town in the local government area of Port Macquarie-Hastings."
+        },
+        {
+          "title": "Port Macquarie",
+          "sentence_index": 3,
+          "text": " The town with its suburbs had a population of 45,698 in June 2016."
+        }
+      ],
+      "baseline_retrieved_gold": 4,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Bonny Hills, New South Wales",
+          "sentence_index": 0,
+          "text": "Bonny Hills is a town in New South Wales, Australia about 30 minutes drive south of Port Macquarie."
+        },
+        {
+          "title": "Bonny Hills, New South Wales",
+          "sentence_index": 1,
+          "text": " As of the 2011 census, it had a population of 2,870 people."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ae2070a5542994d89d5b313",
+      "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
+      "gold_answer": "Badly Drawn Boy",
+      "baseline_answer": "Badly Drawn Boy.",
+      "reuse_answer": "Badly Drawn Boy.",
+      "baseline_sp": [
+        [
+          "The Hour of Bewilderbeast",
+          0
+        ],
+        [
+          "The Hour of Bewilderbeast",
+          1
+        ],
+        [
+          "The Hour of Bewilderbeast",
+          2
+        ],
+        [
+          "Badly Drawn Boy",
+          0
+        ],
+        [
+          "Wolf Alice",
+          0
+        ],
+        [
+          "Wolf Alice",
+          1
+        ],
+        [
+          "Badly Drawn Boy discography",
+          0
+        ],
+        [
+          "Badly Drawn Boy discography",
+          2
+        ],
+        [
+          "Badly Drawn Boy discography",
+          4
+        ],
+        [
+          "Something to Talk About (Badly Drawn Boy song)",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "The Hour of Bewilderbeast",
+          1
+        ],
+        [
+          "Badly Drawn Boy",
+          0
+        ],
+        [
+          "Wolf Alice",
+          0
+        ],
+        [
+          "Wolf Alice",
+          1
+        ],
+        [
+          "Badly Drawn Boy discography",
+          0
+        ],
+        [
+          "Badly Drawn Boy discography",
+          2
+        ],
+        [
+          "Badly Drawn Boy discography",
+          4
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Badly Drawn Boy",
+          "sentence_index": 0,
+          "text": "Damon Michael Gough (born 2 October 1969, in Dunstable, Bedfordshire), known by the stage name Badly Drawn Boy, is an English indie singer-songwriter and multi-instrumentalist."
+        },
+        {
+          "title": "Wolf Alice",
+          "sentence_index": 1,
+          "text": " Its members since 2012 are Ellie Rowsell (vocals, guitar), Joff Oddie (guitars, vocals), Theo Ellis (bass), and Joel Amey (drums, vocals)."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ae12d5355429920d52342eb",
+      "question": "When was the film containing the song \"I'm still Here (Jim's Theme)\" published?",
+      "gold_answer": "November 27, 2002.",
+      "baseline_answer": "2002.",
+      "reuse_answer": "A: 2002",
+      "baseline_sp": [
+        [
+          "I'm Still Here (Jim's Theme)",
+          0
+        ],
+        [
+          "I'm Still Here (Jim's Theme)",
+          1
+        ],
+        [
+          "I'm Still Here (Jim's Theme)",
+          2
+        ],
+        [
+          "Treasure Planet",
+          0
+        ],
+        [
+          "Treasure Planet",
+          1
+        ],
+        [
+          "Treasure Planet",
+          2
+        ],
+        [
+          "Treasure Planet",
+          3
+        ],
+        [
+          "Sound follower",
+          0
+        ],
+        [
+          "Sound follower",
+          1
+        ],
+        [
+          "Allavuddin Adbhuta Deepam",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "I'm Still Here (Jim's Theme)",
+          0
+        ],
+        [
+          "I'm Still Here (Jim's Theme)",
+          1
+        ],
+        [
+          "I'm Still Here (Jim's Theme)",
+          2
+        ],
+        [
+          "Treasure Planet",
+          0
+        ],
+        [
+          "Treasure Planet",
+          1
+        ],
+        [
+          "Treasure Planet",
+          2
+        ],
+        [
+          "Allavuddin Adbhuta Deepam",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "I'm Still Here (Jim's Theme)",
+          "sentence_index": 0,
+          "text": "\"I'm Still Here (Jim's Theme)\" is a song written by the Goo Goo Dolls frontman John Rzeznik for Disney's animated film \"Treasure Planet\"."
+        },
+        {
+          "title": "Treasure Planet",
+          "sentence_index": 0,
+          "text": "Treasure Planet is a 2002 American animated science fiction film produced by Walt Disney Feature Animation and released by Walt Disney Pictures on November 27, 2002."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a7ce50f55429909bec76869",
+      "question": "In what year did the Danish plant ecologist who assisted a Danish chemist, famous for the introduction of the concept of pH die?",
+      "gold_answer": "1974",
+      "baseline_answer": "1974",
+      "reuse_answer": "1974",
+      "baseline_sp": [
+        [
+          "Carsten Olsen",
+          0
+        ],
+        [
+          "Carsten Olsen",
+          1
+        ],
+        [
+          "Carsten Olsen",
+          3
+        ],
+        [
+          "S. P. L. S\u00f8rensen",
+          0
+        ],
+        [
+          "S. P. L. S\u00f8rensen",
+          1
+        ],
+        [
+          "Johannes Iversen",
+          0
+        ],
+        [
+          "Johannes Iversen",
+          1
+        ],
+        [
+          "Johannes Iversen",
+          3
+        ],
+        [
+          "Johannes Iversen",
+          7
+        ],
+        [
+          "Tyge W. B\u00f6cher",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Carsten Olsen",
+          0
+        ],
+        [
+          "Carsten Olsen",
+          2
+        ],
+        [
+          "S. P. L. S\u00f8rensen",
+          0
+        ],
+        [
+          "Johannes Iversen",
+          0
+        ],
+        [
+          "Johannes Iversen",
+          1
+        ],
+        [
+          "Johannes Iversen",
+          3
+        ],
+        [
+          "Tyge W. B\u00f6cher",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Carsten Olsen",
+          "sentence_index": 0,
+          "text": "Carsten Erik Olsen (March 1, 1891 \u2013 August 19, 1974) was a Danish plant ecologist and plant physiologist, who pioneered the study of plant nutrition in soils of different pH."
+        },
+        {
+          "title": "S. P. L. S\u00f8rensen",
+          "sentence_index": 0,
+          "text": "S\u00f8ren Peder Lauritz S\u00f8rensen (9 January 1868 \u2013 12 February 1939) was a Danish chemist, famous for the introduction of the concept of pH, a scale for measuring acidity and alkalinity."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5adf39295542992d7e9f92df",
+      "question": "Which genus has more species, Apium or Elodea?",
+      "gold_answer": "Apium",
+      "baseline_answer": "Apium.",
+      "reuse_answer": "Apium.",
+      "baseline_sp": [
+        [
+          "Elodea",
+          0
+        ],
+        [
+          "Elodea",
+          1
+        ],
+        [
+          "Elodea",
+          2
+        ],
+        [
+          "Apium",
+          0
+        ],
+        [
+          "Apium",
+          1
+        ],
+        [
+          "Apium annuum",
+          0
+        ],
+        [
+          "Apium annuum",
+          1
+        ],
+        [
+          "Apiaceae",
+          0
+        ],
+        [
+          "Apiaceae",
+          1
+        ],
+        [
+          "Apium bermejoi",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Elodea",
+          0
+        ],
+        [
+          "Elodea",
+          1
+        ],
+        [
+          "Elodea",
+          2
+        ],
+        [
+          "Apium",
+          0
+        ],
+        [
+          "Apium",
+          1
+        ],
+        [
+          "Apium annuum",
+          0
+        ],
+        [
+          "Apiaceae",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Apium",
+          "sentence_index": 0,
+          "text": "Apium (including celery and the marshworts) is a genus of about 20 species of flowering plants in the family Apiaceae, with a subcosmopolitan distribution in Europe, Asia, Africa, South America and Australia."
+        },
+        {
+          "title": "Elodea",
+          "sentence_index": 0,
+          "text": "Elodea is a genus of 6 species of aquatic plants often called the waterweeds described as a genus in 1803."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a7cba005542990527d55516",
+      "question": "What is the year of the event that occured first, Skeeter stopped teaching at his alma mater,or Emmett Kelly died?",
+      "gold_answer": "1979",
+      "baseline_answer": "1980.",
+      "reuse_answer": "1979",
+      "baseline_sp": [
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          0
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          1
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          2
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          3
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          4
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          5
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          6
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          7
+        ],
+        [
+          "Emmett Kelly",
+          0
+        ],
+        [
+          "LSU Alma Mater",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          0
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          2
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          3
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          4
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          5
+        ],
+        [
+          "Zachary &quot;Skeeter&quot; Reece",
+          7
+        ],
+        [
+          "Emmett Kelly",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Emmett Kelly",
+          "sentence_index": 0,
+          "text": "Emmett Leo Kelly (December 9, 1898March 28, 1979) was an American circus performer, who created the memorable clown figure \"Weary Willie\", based on the hobos of the Depression era."
+        },
+        {
+          "title": "Zachary &quot;Skeeter&quot; Reece",
+          "sentence_index": 0,
+          "text": "Skeeter Reece is a clown/unicyclist from the Bronx, NY who began his performing career with the King Charles Troupe (unicyclists who play basketball) in Ringling Brothers Barnum and Bailey Circus."
+        },
+        {
+          "title": "Zachary &quot;Skeeter&quot; Reece",
+          "sentence_index": 7,
+          "text": " Skeeter also taught at his alma mater in 1979 and 1980."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 3,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a7518cb55429916b0164259",
+      "question": "What Was the name of Juan Manuel M\u00e1rquez's  WBO champion holding younger brother?",
+      "gold_answer": "Rafael M\u00e1rquez",
+      "baseline_answer": "Rafael M\u00e1rquez.",
+      "reuse_answer": "Rafael M\u00e1rquez.",
+      "baseline_sp": [
+        [
+          "Rafael M\u00e1rquez (boxer)",
+          0
+        ],
+        [
+          "Rafael M\u00e1rquez (boxer)",
+          1
+        ],
+        [
+          "Rafael M\u00e1rquez (boxer)",
+          2
+        ],
+        [
+          "Rafael M\u00e1rquez (boxer)",
+          4
+        ],
+        [
+          "Juan Manuel M\u00e1rquez",
+          0
+        ],
+        [
+          "Juan Manuel M\u00e1rquez",
+          1
+        ],
+        [
+          "Juan Manuel M\u00e1rquez vs. Juan D\u00edaz",
+          0
+        ],
+        [
+          "Juan Manuel M\u00e1rquez vs. Joel Casamayor",
+          0
+        ],
+        [
+          "Juan Manuel M\u00e1rquez vs. Joel Casamayor",
+          2
+        ],
+        [
+          "Manny Pacquiao vs. Juan Manuel M\u00e1rquez III",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Rafael M\u00e1rquez (boxer)",
+          0
+        ],
+        [
+          "Rafael M\u00e1rquez (boxer)",
+          4
+        ],
+        [
+          "Juan Manuel M\u00e1rquez",
+          0
+        ],
+        [
+          "Juan Manuel M\u00e1rquez",
+          1
+        ],
+        [
+          "Juan Manuel M\u00e1rquez vs. Juan D\u00edaz",
+          0
+        ],
+        [
+          "Juan Manuel M\u00e1rquez vs. Joel Casamayor",
+          2
+        ],
+        [
+          "Manny Pacquiao vs. Juan Manuel M\u00e1rquez III",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Juan Manuel M\u00e1rquez",
+          "sentence_index": 0,
+          "text": "Juan Manuel M\u00e1rquez M\u00e9ndez (born August 23, 1973) is a Mexican former professional boxer who competed from 1993 to 2014."
+        },
+        {
+          "title": "Rafael M\u00e1rquez (boxer)",
+          "sentence_index": 0,
+          "text": "Rafael M\u00e1rquez M\u00e9ndez (born 25 March 1975) is a Mexican former professional boxer who competed from 1995 to 2013."
+        },
+        {
+          "title": "Rafael M\u00e1rquez (boxer)",
+          "sentence_index": 4,
+          "text": " His older brother Juan Manuel M\u00e1rquez is also a professional boxer and multiple-time world champion."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 3,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a87e3d65542993e715abff8",
+      "question": "Alfie Allen played Theon Greyjoy on which show?",
+      "gold_answer": "Game of Thrones",
+      "baseline_answer": "A Game of Thrones",
+      "reuse_answer": "Game of Thrones.",
+      "baseline_sp": [
+        [
+          "Alfie Allen",
+          0
+        ],
+        [
+          "Alfie Allen",
+          1
+        ],
+        [
+          "Theon Greyjoy",
+          0
+        ],
+        [
+          "Theon Greyjoy",
+          1
+        ],
+        [
+          "Keith Allen (actor)",
+          0
+        ],
+        [
+          "Keith Allen (actor)",
+          1
+        ],
+        [
+          "Alfie (Lily Allen song)",
+          0
+        ],
+        [
+          "Alfie (Lily Allen song)",
+          1
+        ],
+        [
+          "Alfie (Lily Allen song)",
+          3
+        ],
+        [
+          "Marie Antoinette syndrome",
+          5
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Alfie Allen",
+          0
+        ],
+        [
+          "Alfie Allen",
+          1
+        ],
+        [
+          "Theon Greyjoy",
+          0
+        ],
+        [
+          "Theon Greyjoy",
+          1
+        ],
+        [
+          "Alfie (Lily Allen song)",
+          3
+        ],
+        [
+          "Keith Allen (actor)",
+          1
+        ],
+        [
+          "Marie Antoinette syndrome",
+          5
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Alfie Allen",
+          "sentence_index": 0,
+          "text": "Alfie Allen (born 12 September 1986) is an English actor."
+        },
+        {
+          "title": "Theon Greyjoy",
+          "sentence_index": 0,
+          "text": "Theon Greyjoy is a fictional character in the \"A Song of Ice and Fire\" series of fantasy novels by American author George R. R. Martin, and its television adaptation \"Game of Thrones\"."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5abd2af955429933744ab74b",
+      "question": "What movie did actress Irene Jacob complete before the American action crime thriller film directed by Stuart Bird?",
+      "gold_answer": "Beyond the Clouds",
+      "baseline_answer": "U.S. Marshals.",
+      "reuse_answer": "Based on the context, I'd answer:\n\nQ: What movie did actress Irene Jacob complete before the American action crime thriller film directed by Stuart Bird?\n\nA: U.S. Marshals (1998)",
+      "baseline_sp": [
+        [
+          "Ir\u00e8ne Jacob",
+          0
+        ],
+        [
+          "Ir\u00e8ne Jacob",
+          1
+        ],
+        [
+          "Ir\u00e8ne Jacob",
+          2
+        ],
+        [
+          "Incognito (1998 film)",
+          0
+        ],
+        [
+          "Incognito (1998 film)",
+          1
+        ],
+        [
+          "Point Break",
+          0
+        ],
+        [
+          "Takers",
+          0
+        ],
+        [
+          "Cellular (film)",
+          0
+        ],
+        [
+          "Rage (2014 film)",
+          0
+        ],
+        [
+          "War (2007 film)",
+          4
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Ir\u00e8ne Jacob",
+          0
+        ],
+        [
+          "Ir\u00e8ne Jacob",
+          1
+        ],
+        [
+          "Ir\u00e8ne Jacob",
+          2
+        ],
+        [
+          "Incognito (1998 film)",
+          0
+        ],
+        [
+          "Incognito (1998 film)",
+          1
+        ],
+        [
+          "Takers",
+          0
+        ],
+        [
+          "Rage (2014 film)",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Ir\u00e8ne Jacob",
+          "sentence_index": 0,
+          "text": "Ir\u00e8ne Marie Jacob (born 15 July 1966) is a French-Swiss actress known for her work with Polish film director Krzysztof Kie\u015blowski."
+        },
+        {
+          "title": "Ir\u00e8ne Jacob",
+          "sentence_index": 2,
+          "text": " Her other film appearances include \"The Secret Garden\" (1993), \"Beyond the Clouds\" (1995), \"U.S. Marshals\" (1998), and \"Eternity\" (2016)."
+        },
+        {
+          "title": "U.S. Marshals (film)",
+          "sentence_index": 0,
+          "text": "U.S. Marshals is a 1998 American action crime thriller film directed by Stuart Baird."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "U.S. Marshals (film)",
+          "sentence_index": 0,
+          "text": "U.S. Marshals is a 1998 American action crime thriller film directed by Stuart Baird."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5adccd795542990d50227d2c",
+      "question": "In which city is the ambassador of the Rabat-Sal\u00e9-K\u00e9nitra administrative region to China based?",
+      "gold_answer": "Beijing",
+      "baseline_answer": "Beijing.",
+      "reuse_answer": "Beijing.",
+      "baseline_sp": [
+        [
+          "Moroccan Ambassador to China",
+          0
+        ],
+        [
+          "Rabat",
+          0
+        ],
+        [
+          "Liaison Office (Hong Kong)",
+          0
+        ],
+        [
+          "Liaison Office (Hong Kong)",
+          1
+        ],
+        [
+          "Liaison Office (Hong Kong)",
+          2
+        ],
+        [
+          "2014 NPCSC Decision on Hong Kong",
+          0
+        ],
+        [
+          "Sinuiju Special Administrative Region",
+          0
+        ],
+        [
+          "Sinuiju Special Administrative Region",
+          2
+        ],
+        [
+          "Wolong Special Administrative Region",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Moroccan Ambassador to China",
+          0
+        ],
+        [
+          "Rabat",
+          0
+        ],
+        [
+          "Liaison Office (Hong Kong)",
+          0
+        ],
+        [
+          "Liaison Office (Hong Kong)",
+          2
+        ],
+        [
+          "2014 NPCSC Decision on Hong Kong",
+          0
+        ],
+        [
+          "Sinuiju Special Administrative Region",
+          2
+        ],
+        [
+          "Wolong Special Administrative Region",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Moroccan Ambassador to China",
+          "sentence_index": 0,
+          "text": "The Moroccan ambassador in Beijing is the official representative of the Government in Rabat to the Government of the People's Republic of China."
+        },
+        {
+          "title": "Rabat",
+          "sentence_index": 0,
+          "text": "Rabat (Berber: , Arabic: \u0627\u0644\u0631\u0650\u0651\u0628\u064e\u0627\u0637\u200e \u200e , Moroccan Arabic: \u0631\u0651\u0628\u0627\u0637\u200e \u200e ) is the capital city of Morocco and its second largest city with an urban population of approximately 580,000 (2014) and a metropolitan population of over 1.2 million."
+        },
+        {
+          "title": "Rabat",
+          "sentence_index": 1,
+          "text": " It is also the capital city of the Rabat-Sal\u00e9-K\u00e9nitra administrative region."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Rabat",
+          "sentence_index": 1,
+          "text": " It is also the capital city of the Rabat-Sal\u00e9-K\u00e9nitra administrative region."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a81d92f554299676cceb0f9",
+      "question": "Where are the 17th Street Canal and the Beaver and Erie Canal located? ",
+      "gold_answer": "Pennsylvania",
+      "baseline_answer": "Pennsylvania and Louisiana.",
+      "reuse_answer": "A: Pennsylvania and Louisiana.",
+      "baseline_sp": [
+        [
+          "Beaver and Erie Canal",
+          0
+        ],
+        [
+          "Beaver and Erie Canal",
+          1
+        ],
+        [
+          "17th Street Canal",
+          0
+        ],
+        [
+          "17th Street Canal",
+          1
+        ],
+        [
+          "17th Street Canal",
+          2
+        ],
+        [
+          "17th Street Canal",
+          3
+        ],
+        [
+          "17th Street Canal",
+          4
+        ],
+        [
+          "Pennsylvania and Ohio Canal",
+          1
+        ],
+        [
+          "New Orleans Outfall Canals",
+          3
+        ],
+        [
+          "Broad Street Bridge (Rochester, New York)",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Beaver and Erie Canal",
+          0
+        ],
+        [
+          "Beaver and Erie Canal",
+          1
+        ],
+        [
+          "17th Street Canal",
+          0
+        ],
+        [
+          "17th Street Canal",
+          1
+        ],
+        [
+          "17th Street Canal",
+          3
+        ],
+        [
+          "17th Street Canal",
+          4
+        ],
+        [
+          "Pennsylvania and Ohio Canal",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "17th Street Canal",
+          "sentence_index": 0,
+          "text": "The 17th Street Canal is the largest and most important drainage canal in the city of New Orleans."
+        },
+        {
+          "title": "Beaver and Erie Canal",
+          "sentence_index": 0,
+          "text": "The Beaver and Erie Canal, also known as the Erie Extension Canal, was part of the Pennsylvania Canal system and consisted of three sections: the Beaver Division, the Shenango Division, and the Conneaut Division."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a7b735c5542997c3ec9718a",
+      "question": "The Toyota FJ Cruiser is built by this Toyota subsidiary which is a leading producer of what type of trucks in Asia?",
+      "gold_answer": "medium and heavy-duty diesel trucks",
+      "baseline_answer": "Hino Motors.",
+      "reuse_answer": "Hino Motors",
+      "baseline_sp": [
+        [
+          "Hino Motors",
+          1
+        ],
+        [
+          "Toyota FJ Cruiser",
+          0
+        ],
+        [
+          "Toyota FJ Cruiser",
+          2
+        ],
+        [
+          "Toyota FJ Cruiser",
+          4
+        ],
+        [
+          "Toyota Kijang",
+          0
+        ],
+        [
+          "Toyota Mega Cruiser",
+          0
+        ],
+        [
+          "Toyota Mega Cruiser",
+          1
+        ],
+        [
+          "Hotai Motor",
+          1
+        ],
+        [
+          "Toyota Material Handling, U.S.A., Inc.",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Hino Motors",
+          1
+        ],
+        [
+          "Toyota FJ Cruiser",
+          0
+        ],
+        [
+          "Toyota FJ Cruiser",
+          2
+        ],
+        [
+          "Toyota FJ Cruiser",
+          4
+        ],
+        [
+          "Toyota Mega Cruiser",
+          0
+        ],
+        [
+          "Toyota Mega Cruiser",
+          1
+        ],
+        [
+          "Hotai Motor",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Hino Motors",
+          "sentence_index": 1,
+          "text": " The company is a leading producer of medium and heavy-duty diesel trucks in Asia."
+        },
+        {
+          "title": "Toyota FJ Cruiser",
+          "sentence_index": 2,
+          "text": " The FJ Cruiser is built by Toyota subsidiary Hino Motors in Hamura, Japan since 2006 and shares many structural underpinnings with the Toyota Land Cruiser Prado."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5addcfd65542997dc790703e",
+      "question": "Which company had a ten year contract with the anti-hero from Escape From New York played by Kurt Russel? ",
+      "gold_answer": "contract with The Walt Disney Company",
+      "baseline_answer": "The Walt Disney Company.",
+      "reuse_answer": "The Walt Disney Company.",
+      "baseline_sp": [
+        [
+          "Kurt Russell",
+          0
+        ],
+        [
+          "Kurt Russell",
+          1
+        ],
+        [
+          "Kurt Russell",
+          2
+        ],
+        [
+          "Snake Plissken",
+          0
+        ],
+        [
+          "Snake Plissken",
+          1
+        ],
+        [
+          "Snake Plissken",
+          2
+        ],
+        [
+          "Snake Plissken",
+          3
+        ],
+        [
+          "Jerome Silberstein",
+          1
+        ],
+        [
+          "Jerome Silberstein",
+          7
+        ],
+        [
+          "Kate McGarry",
+          3
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Kurt Russell",
+          0
+        ],
+        [
+          "Kurt Russell",
+          1
+        ],
+        [
+          "Kurt Russell",
+          2
+        ],
+        [
+          "Snake Plissken",
+          0
+        ],
+        [
+          "Snake Plissken",
+          1
+        ],
+        [
+          "Snake Plissken",
+          2
+        ],
+        [
+          "Jerome Silberstein",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Kurt Russell",
+          "sentence_index": 2,
+          "text": " In the late 1960s, he signed a ten-year contract with The Walt Disney Company where, according to Robert Osborne, he became the studio's top star of the 1970s."
+        },
+        {
+          "title": "Snake Plissken",
+          "sentence_index": 0,
+          "text": "S.D. Bob \"Snake\" Plissken is the main protagonist of the films \"Escape from New York\" and \"Escape from L.A.\"."
+        },
+        {
+          "title": "Snake Plissken",
+          "sentence_index": 1,
+          "text": " He is portrayed by Kurt Russell, and created by director John Carpenter and screenwriter Nick Castle."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 3,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a88be405542997e5c09a6ab",
+      "question": "Who choreographed one who is said to be the last muse for the choreographer and starred in the Nutcracker?",
+      "gold_answer": "George Balanchine",
+      "baseline_answer": "Lev Ivanov.",
+      "reuse_answer": "Lev Ivanov.",
+      "baseline_sp": [
+        [
+          "Darci Kistler",
+          0
+        ],
+        [
+          "Darci Kistler",
+          1
+        ],
+        [
+          "Lev Ivanov",
+          1
+        ],
+        [
+          "Lev Ivanov",
+          2
+        ],
+        [
+          "The Nutcracker (1993 film)",
+          0
+        ],
+        [
+          "The Nutcracker (1993 film)",
+          1
+        ],
+        [
+          "The Nutcracker (Balanchine)",
+          0
+        ],
+        [
+          "The Nutcracker (Willam Christensen)",
+          1
+        ],
+        [
+          "The Nutcracker (Willam Christensen)",
+          4
+        ],
+        [
+          "The Nutcracker (Willam Christensen)",
+          5
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Darci Kistler",
+          0
+        ],
+        [
+          "Darci Kistler",
+          1
+        ],
+        [
+          "Lev Ivanov",
+          1
+        ],
+        [
+          "Lev Ivanov",
+          2
+        ],
+        [
+          "The Nutcracker (1993 film)",
+          0
+        ],
+        [
+          "The Nutcracker (1993 film)",
+          1
+        ],
+        [
+          "The Nutcracker (Willam Christensen)",
+          5
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Darci Kistler",
+          "sentence_index": 0,
+          "text": "Darci Kistler (born June 4, 1964) is a noted American ballerina."
+        },
+        {
+          "title": "Darci Kistler",
+          "sentence_index": 1,
+          "text": " She is often said to be the last muse for the choreographer, George Balanchine."
+        },
+        {
+          "title": "The Nutcracker (1993 film)",
+          "sentence_index": 0,
+          "text": "The Nutcracker, also known as George Balanchine's The Nutcracker, is a 1993 American Christmas musical film directed by Emile Ardolino."
+        },
+        {
+          "title": "The Nutcracker (1993 film)",
+          "sentence_index": 1,
+          "text": " The film stars Darci Kistler, Damian Woetzel, Kyra Nichols, Macaulay Culkin Wendy Whelan, Margaret Tracey, Gen Horiuchi and Tom Gold."
+        }
+      ],
+      "baseline_retrieved_gold": 4,
+      "reuse_retrieved_gold": 4,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ab3b50055429969a97a818c",
+      "question": "On which river is the shipyard established by Andrew Sprowle ?",
+      "gold_answer": "the Elizabeth River",
+      "baseline_answer": "Portsmouth, Virginia.",
+      "reuse_answer": "Elizabeth.",
+      "baseline_sp": [
+        [
+          "Andrew Sprowle",
+          0
+        ],
+        [
+          "Andrew Sprowle",
+          1
+        ],
+        [
+          "Coram Shipyard Historic District",
+          2
+        ],
+        [
+          "Norfolk Naval Shipyard",
+          0
+        ],
+        [
+          "Norfolk Naval Shipyard",
+          2
+        ],
+        [
+          "Old Ship Street Historic District",
+          1
+        ],
+        [
+          "Old Ship Street Historic District",
+          3
+        ],
+        [
+          "Smith and Dimon Shipyard",
+          1
+        ],
+        [
+          "Jean Street Shipyard",
+          0
+        ],
+        [
+          "Jean Street Shipyard",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Andrew Sprowle",
+          0
+        ],
+        [
+          "Andrew Sprowle",
+          1
+        ],
+        [
+          "Coram Shipyard Historic District",
+          2
+        ],
+        [
+          "Norfolk Naval Shipyard",
+          2
+        ],
+        [
+          "Smith and Dimon Shipyard",
+          1
+        ],
+        [
+          "Jean Street Shipyard",
+          0
+        ],
+        [
+          "Jean Street Shipyard",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Andrew Sprowle",
+          "sentence_index": 0,
+          "text": "Andrew Sprowle (c. 1714 \u2013 1776) was a merchant, British naval agent, and landowner in Portsmouth, Virginia, best known for establishing the Gosport Navy Yard, which is currently known as Norfolk Naval Shipyard."
+        },
+        {
+          "title": "Norfolk Naval Shipyard",
+          "sentence_index": 2,
+          "text": " Located on the Elizabeth River, the yard is just a short distance upriver from its mouth at Hampton Roads."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ae077805542993d6555eb6e",
+      "question": "Are Lance King and Han Seung-yeon both heavy metal vocalists?",
+      "gold_answer": "no",
+      "baseline_answer": "Yes.",
+      "reuse_answer": "Yes.",
+      "baseline_sp": [
+        [
+          "Lance King",
+          0
+        ],
+        [
+          "Lance King",
+          1
+        ],
+        [
+          "Avian (band)",
+          1
+        ],
+        [
+          "Avian (band)",
+          6
+        ],
+        [
+          "A Moment in Chiros",
+          0
+        ],
+        [
+          "Han Seung-yeon",
+          0
+        ],
+        [
+          "Han Seung-yeon",
+          1
+        ],
+        [
+          "Sully Erna",
+          0
+        ],
+        [
+          "Sully Erna",
+          2
+        ],
+        [
+          "Raskasta Joulua",
+          3
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Lance King",
+          0
+        ],
+        [
+          "Lance King",
+          1
+        ],
+        [
+          "Han Seung-yeon",
+          0
+        ],
+        [
+          "Han Seung-yeon",
+          1
+        ],
+        [
+          "Sully Erna",
+          0
+        ],
+        [
+          "Sully Erna",
+          2
+        ],
+        [
+          "Raskasta Joulua",
+          3
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Han Seung-yeon",
+          "sentence_index": 1,
+          "text": " She is best known as former main vocalist of the South Korean girl group Kara."
+        },
+        {
+          "title": "Lance King",
+          "sentence_index": 0,
+          "text": "Lance King (born November 23, 1962) is an American heavy metal vocalist specializing in melodic rock progressive and power metal."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5adec96e5542995534e8c712",
+      "question": "What ranks does Jerry Kyd wear while captaining the largest warship ever built for the Royal Navy?",
+      "gold_answer": "Captain while retaining the substantive rank of Commodore",
+      "baseline_answer": "Captain and Commodore.",
+      "reuse_answer": "Captain and Commodore.",
+      "baseline_sp": [
+        [
+          "Jerry Kyd",
+          0
+        ],
+        [
+          "Jerry Kyd",
+          1
+        ],
+        [
+          "HMS Queen Elizabeth (R08)",
+          0
+        ],
+        [
+          "HMS Queen Elizabeth (R08)",
+          2
+        ],
+        [
+          "HMS Queen Elizabeth (R08)",
+          3
+        ],
+        [
+          "USS Pennsylvania (1837)",
+          1
+        ],
+        [
+          "HMS Royal George (1756)",
+          1
+        ],
+        [
+          "USS Archerfish (SS-311)",
+          2
+        ],
+        [
+          "HMS Melita (1888)",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Jerry Kyd",
+          0
+        ],
+        [
+          "Jerry Kyd",
+          1
+        ],
+        [
+          "HMS Queen Elizabeth (R08)",
+          0
+        ],
+        [
+          "HMS Queen Elizabeth (R08)",
+          2
+        ],
+        [
+          "HMS Queen Elizabeth (R08)",
+          3
+        ],
+        [
+          "USS Pennsylvania (1837)",
+          1
+        ],
+        [
+          "HMS Royal George (1756)",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "HMS Queen Elizabeth (R08)",
+          "sentence_index": 3,
+          "text": " As Captain of HMS \"Queen Elizabeth\", Kyd will wear the Royal Navy rank of Captain while retaining the substantive rank of Commodore."
+        },
+        {
+          "title": "Jerry Kyd",
+          "sentence_index": 0,
+          "text": "Commodore Jerry Kyd is a Royal Navy officer who is the captain of the British aircraft carrier HMS \"Queen Elizabeth\"."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a8c42d7554299240d9c20f5",
+      "question": "How long does the lower level degree program, offered at Helene Fuld College of Nursing, typically last?",
+      "gold_answer": "two years",
+      "baseline_answer": "Two years.",
+      "reuse_answer": "Two years.",
+      "baseline_sp": [
+        [
+          "Helene Fuld College of Nursing",
+          0
+        ],
+        [
+          "Helene Fuld College of Nursing",
+          1
+        ],
+        [
+          "Helene Fuld College of Nursing",
+          2
+        ],
+        [
+          "Bachelor of Science in Nursing",
+          1
+        ],
+        [
+          "Bachelor of Science in Nursing",
+          3
+        ],
+        [
+          "Bachelor of Science in Nursing",
+          4
+        ],
+        [
+          "Bachelor of Science in Nursing",
+          5
+        ],
+        [
+          "Nurse education",
+          3
+        ],
+        [
+          "Helene Fuld Health Trust",
+          0
+        ],
+        [
+          "University of Nursing, Mandalay",
+          1
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Helene Fuld College of Nursing",
+          0
+        ],
+        [
+          "Helene Fuld College of Nursing",
+          1
+        ],
+        [
+          "Helene Fuld College of Nursing",
+          2
+        ],
+        [
+          "Bachelor of Science in Nursing",
+          1
+        ],
+        [
+          "Bachelor of Science in Nursing",
+          5
+        ],
+        [
+          "Nurse education",
+          3
+        ],
+        [
+          "Helene Fuld Health Trust",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Associate degree",
+          "sentence_index": 0,
+          "text": "An associate degree (or associate's degree) is an undergraduate academic degree awarded by colleges and universities upon completion of a course of study intended to usually last two years."
+        },
+        {
+          "title": "Helene Fuld College of Nursing",
+          "sentence_index": 0,
+          "text": "The Helene Fuld College of Nursing is an American private, nonsectarian institution of higher learning that offers associate and comprehensive baccalaureate science degrees as continuing education to Licensed Practical and Registered Nurses who aspire to elevate their academic and professional credentials."
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Associate degree",
+          "sentence_index": 0,
+          "text": "An associate degree (or associate's degree) is an undergraduate academic degree awarded by colleges and universities upon completion of a course of study intended to usually last two years."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a78fe8155429970f5fffe11",
+      "question": "Who was born first, Steve Hogarth or Donnie Munro?",
+      "gold_answer": "Donnie Munro",
+      "baseline_answer": "Donnie Munro (August 2, 1953).",
+      "reuse_answer": "Steve Hogarth was born on 14 May 1956, and Donnie Munro was born on 2 August 1953, so Donnie Munro was born first.",
+      "baseline_sp": [
+        [
+          "Donnie Munro",
+          0
+        ],
+        [
+          "Steve Hogarth",
+          0
+        ],
+        [
+          "Steve Hogarth",
+          1
+        ],
+        [
+          "Steve Hogarth",
+          2
+        ],
+        [
+          "Steve Hogarth",
+          3
+        ],
+        [
+          "On the West Side",
+          0
+        ],
+        [
+          "Calum MacDonald (musician)",
+          2
+        ],
+        [
+          "Mara (album)",
+          2
+        ],
+        [
+          "Rory Macdonald (musician)",
+          2
+        ],
+        [
+          "Easter (Marillion song)",
+          3
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Donnie Munro",
+          0
+        ],
+        [
+          "Steve Hogarth",
+          0
+        ],
+        [
+          "Steve Hogarth",
+          1
+        ],
+        [
+          "Steve Hogarth",
+          2
+        ],
+        [
+          "Steve Hogarth",
+          3
+        ],
+        [
+          "On the West Side",
+          0
+        ],
+        [
+          "Easter (Marillion song)",
+          3
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Donnie Munro",
+          "sentence_index": 0,
+          "text": "Donnie Munro (Donaidh Rothach) (born 2 August 1953) is a Scottish musician, and former lead singer of the band Runrig."
+        },
+        {
+          "title": "Steve Hogarth",
+          "sentence_index": 0,
+          "text": "Steve Hogarth (born on 14 May 1956 in Kendal, Westmorland) also known as \"h\", is an English singer-songwriter and musician."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5ae056c755429945ae959319",
+      "question": "James Garner had a role in the 2004 romantic drama directed by whom?",
+      "gold_answer": "Nick Cassavetes",
+      "baseline_answer": "Nick Cassavetes.",
+      "reuse_answer": "Nick Cassavetes.",
+      "baseline_sp": [
+        [
+          "James Garner filmography",
+          0
+        ],
+        [
+          "James Garner filmography",
+          1
+        ],
+        [
+          "James Garner filmography",
+          2
+        ],
+        [
+          "James Garner filmography",
+          3
+        ],
+        [
+          "The Notebook",
+          0
+        ],
+        [
+          "The Notebook",
+          1
+        ],
+        [
+          "The Notebook",
+          2
+        ],
+        [
+          "Mister Buddwing",
+          0
+        ],
+        [
+          "Bride and Prejudice",
+          0
+        ],
+        [
+          "Cash McCall",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "James Garner filmography",
+          1
+        ],
+        [
+          "James Garner filmography",
+          2
+        ],
+        [
+          "James Garner filmography",
+          3
+        ],
+        [
+          "The Notebook",
+          0
+        ],
+        [
+          "The Notebook",
+          2
+        ],
+        [
+          "Mister Buddwing",
+          0
+        ],
+        [
+          "Cash McCall",
+          0
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "James Garner filmography",
+          "sentence_index": 3,
+          "text": " His television series credits include portraying Bret Maverick in \"Maverick\" (1957\u20131962) and \"Bret Maverick\" (1981\u20131982), Jim Rockford in \"The Rockford Files\" (1974\u20131980), and Jim Egan in \"8 Simple Rules\" (2003\u20132005)."
+        },
+        {
+          "title": "The Notebook",
+          "sentence_index": 0,
+          "text": "The Notebook is a 2004 American romantic drama film directed by Nick Cassavetes and based on the 1996 novel of the same name by Nicholas Sparks."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5ab9dd4c554299232ef4a22f",
+      "question": "Who was part of more music bands, Alison Mosshart or Ann Wilson?",
+      "gold_answer": "Alison Nicole Mosshart",
+      "baseline_answer": "Alison Mosshart.",
+      "reuse_answer": "Ann Wilson.",
+      "baseline_sp": [
+        [
+          "Alison Mosshart",
+          0
+        ],
+        [
+          "Alison Mosshart",
+          1
+        ],
+        [
+          "Alison Mosshart",
+          2
+        ],
+        [
+          "Ann Wilson",
+          0
+        ],
+        [
+          "Ann Wilson",
+          1
+        ],
+        [
+          "Ann Wilson",
+          2
+        ],
+        [
+          "List of Heart band members",
+          1
+        ],
+        [
+          "Strange Euphoria",
+          1
+        ],
+        [
+          "The Dead Weather",
+          1
+        ],
+        [
+          "Jamie Hince",
+          2
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Alison Mosshart",
+          0
+        ],
+        [
+          "Alison Mosshart",
+          1
+        ],
+        [
+          "Ann Wilson",
+          0
+        ],
+        [
+          "Ann Wilson",
+          1
+        ],
+        [
+          "Strange Euphoria",
+          1
+        ],
+        [
+          "The Dead Weather",
+          1
+        ],
+        [
+          "Jamie Hince",
+          3
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Alison Mosshart",
+          "sentence_index": 0,
+          "text": "Alison Nicole Mosshart (born November 23, 1978) is an American singer, songwriter, artist, and occasional model best known as the lead vocalist for the indie rock band The Kills and blues rock band The Dead Weather."
+        },
+        {
+          "title": "Alison Mosshart",
+          "sentence_index": 1,
+          "text": " She started her musical career in 1995 with the Florida punk rock band Discount which disbanded in 2000."
+        },
+        {
+          "title": "Alison Mosshart",
+          "sentence_index": 2,
+          "text": " She then co-founded The Kills with British guitarist Jamie Hince (formerly of Scarfo and Blyth Power) in 2000 in London."
+        },
+        {
+          "title": "Ann Wilson",
+          "sentence_index": 0,
+          "text": "Ann Dustin Wilson (born June 19, 1950) is an American musician, best known as the lead singer and songwriter of the hard rock band Heart."
+        }
+      ],
+      "baseline_retrieved_gold": 4,
+      "reuse_retrieved_gold": 3,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Alison Mosshart",
+          "sentence_index": 2,
+          "text": " She then co-founded The Kills with British guitarist Jamie Hince (formerly of Scarfo and Blyth Power) in 2000 in London."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5a776f8555429972597f1534",
+      "question": "Which politician represents a city on the Flathead Indian Reservation?",
+      "gold_answer": "Gregory J. Hertz",
+      "baseline_answer": "Montana.",
+      "reuse_answer": "Q: Which politician represents a city on the Flathead Indian Reservation?\nA: None (There is no politician mentioned in the context that represents a city on the Flathead Indian Reservation.)",
+      "baseline_sp": [
+        [
+          "Flathead Indian Reservation",
+          0
+        ],
+        [
+          "Polson, Montana",
+          0
+        ],
+        [
+          "Polson, Montana",
+          1
+        ],
+        [
+          "Melita Island",
+          0
+        ],
+        [
+          "Melita Island",
+          1
+        ],
+        [
+          "Northwest Montana Wetland Management District",
+          3
+        ],
+        [
+          "Montana Highway 35",
+          1
+        ],
+        [
+          "Ronan, Montana",
+          1
+        ],
+        [
+          "Flathead Valley",
+          2
+        ],
+        [
+          "Salish-Spokane-Kalispel language",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Flathead Indian Reservation",
+          0
+        ],
+        [
+          "Melita Island",
+          0
+        ],
+        [
+          "Melita Island",
+          1
+        ],
+        [
+          "Northwest Montana Wetland Management District",
+          3
+        ],
+        [
+          "Ronan, Montana",
+          1
+        ],
+        [
+          "Polson, Montana",
+          0
+        ],
+        [
+          "Flathead Valley",
+          2
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Greg Hertz",
+          "sentence_index": 0,
+          "text": "Gregory J. Hertz (born December 30, 1957) is a Republican member of the Montana Legislature."
+        },
+        {
+          "title": "Greg Hertz",
+          "sentence_index": 1,
+          "text": " He was elected to House District 11 which represents the Polson area."
+        },
+        {
+          "title": "Polson, Montana",
+          "sentence_index": 0,
+          "text": "Polson is a city in Lake County, Montana, United States, on the southern shore of Flathead Lake."
+        },
+        {
+          "title": "Polson, Montana",
+          "sentence_index": 1,
+          "text": " It is also on the Flathead Indian Reservation."
+        }
+      ],
+      "baseline_retrieved_gold": 2,
+      "reuse_retrieved_gold": 1,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Greg Hertz",
+          "sentence_index": 0,
+          "text": "Gregory J. Hertz (born December 30, 1957) is a Republican member of the Montana Legislature."
+        },
+        {
+          "title": "Greg Hertz",
+          "sentence_index": 1,
+          "text": " He was elected to House District 11 which represents the Polson area."
+        },
+        {
+          "title": "Polson, Montana",
+          "sentence_index": 1,
+          "text": " It is also on the Flathead Indian Reservation."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    },
+    {
+      "id": "5aba5ea955429939ce03dca5",
+      "question": "The Belton Estate is a novel by an English novelist of the Victorian era, whose best known works are a series of novels that are collectively known as what?",
+      "gold_answer": "Chronicles of Barsetshire",
+      "baseline_answer": "Chronicles of Barsetshire.",
+      "reuse_answer": "Chronicles of Barsetshire.",
+      "baseline_sp": [
+        [
+          "The Belton Estate",
+          0
+        ],
+        [
+          "The Belton Estate",
+          1
+        ],
+        [
+          "The Belton Estate",
+          2
+        ],
+        [
+          "Anthony Trollope",
+          0
+        ],
+        [
+          "Anthony Trollope",
+          1
+        ],
+        [
+          "Anthony Trollope",
+          2
+        ],
+        [
+          "Annie Edwards",
+          0
+        ],
+        [
+          "Katherine Saunders",
+          0
+        ],
+        [
+          "George Eliot",
+          0
+        ],
+        [
+          "George Meredith",
+          0
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Anthony Trollope",
+          0
+        ],
+        [
+          "Anthony Trollope",
+          1
+        ],
+        [
+          "Anthony Trollope",
+          2
+        ],
+        [
+          "Annie Edwards",
+          0
+        ],
+        [
+          "Katherine Saunders",
+          0
+        ],
+        [
+          "George Meredith",
+          0
+        ],
+        [
+          "The Belton Estate",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Anthony Trollope",
+          "sentence_index": 0,
+          "text": "Anthony Trollope ( ; 24 April 1815 \u2013 6 December 1882) was an English novelist of the Victorian era."
+        },
+        {
+          "title": "Anthony Trollope",
+          "sentence_index": 1,
+          "text": " Among his best-known works is a series of novels collectively known as the Chronicles of Barsetshire, which revolves around the imaginary county of Barsetshire."
+        },
+        {
+          "title": "The Belton Estate",
+          "sentence_index": 0,
+          "text": "The Belton Estate is a novel by Anthony Trollope, written in 1865."
+        }
+      ],
+      "baseline_retrieved_gold": 3,
+      "reuse_retrieved_gold": 2,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "The Belton Estate",
+          "sentence_index": 0,
+          "text": "The Belton Estate is a novel by Anthony Trollope, written in 1865."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": false
+    },
+    {
+      "id": "5a8eed625542995085b374b9",
+      "question": "Which system of parliament was modeled after the United Kingdom and is also used in Canada? ",
+      "gold_answer": "Westminster system",
+      "baseline_answer": "Westminster system.",
+      "reuse_answer": "Westminster",
+      "baseline_sp": [
+        [
+          "Politics of Canada",
+          1
+        ],
+        [
+          "Politics of Canada",
+          2
+        ],
+        [
+          "Politics of Canada",
+          3
+        ],
+        [
+          "Westminster system",
+          0
+        ],
+        [
+          "Canada under British rule",
+          0
+        ],
+        [
+          "Canada under British rule",
+          1
+        ],
+        [
+          "Canada under British rule",
+          3
+        ],
+        [
+          "Canada under British rule",
+          5
+        ],
+        [
+          "Canada under British rule",
+          7
+        ],
+        [
+          "Canada under British rule",
+          9
+        ]
+      ],
+      "reuse_sp": [
+        [
+          "Politics of Canada",
+          0
+        ],
+        [
+          "Politics of Canada",
+          1
+        ],
+        [
+          "Politics of Canada",
+          2
+        ],
+        [
+          "Politics of Canada",
+          3
+        ],
+        [
+          "Canada under British rule",
+          8
+        ],
+        [
+          "British North America Acts",
+          1
+        ],
+        [
+          "Westminster system",
+          1
+        ]
+      ],
+      "gold_facts": [
+        {
+          "title": "Constitution of Alberta",
+          "sentence_index": 0,
+          "text": "The Constitution of Alberta describes the fundamental rules under which the Canadian province of Alberta is governed."
+        },
+        {
+          "title": "Constitution of Alberta",
+          "sentence_index": 1,
+          "text": " As is typical of all Canadian provinces, and Westminster systems more generally, Alberta's is an unwritten constitution."
+        },
+        {
+          "title": "Westminster system",
+          "sentence_index": 0,
+          "text": "The Westminster system is a parliamentary system of government modelled after that which developed in the United Kingdom."
+        }
+      ],
+      "baseline_retrieved_gold": 1,
+      "reuse_retrieved_gold": 0,
+      "gold_dropped_by_reuse": [
+        {
+          "title": "Constitution of Alberta",
+          "sentence_index": 0,
+          "text": "The Constitution of Alberta describes the fundamental rules under which the Canadian province of Alberta is governed."
+        },
+        {
+          "title": "Constitution of Alberta",
+          "sentence_index": 1,
+          "text": " As is typical of all Canadian provinces, and Westminster systems more generally, Alberta's is an unwritten constitution."
+        },
+        {
+          "title": "Westminster system",
+          "sentence_index": 0,
+          "text": "The Westminster system is a parliamentary system of government modelled after that which developed in the United Kingdom."
+        }
+      ],
+      "evidence_changed": true,
+      "answer_changed": true
+    }
+  ]
+}
